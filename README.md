@@ -32,6 +32,15 @@ When the Wasserstein distance is zero it means that the upper and lower contour 
 Ishigami function is a well know function used in UQ and SA, and that is the reason it was picked for the initial tests.
 Sobol indices of the Ishigami function will serve as a baseline comparison of our results. The main drawback of this function relies on its non-linearity, and this could pose a challenge for the initial tests. Perhaps a less aggressive function is better suited for testing the waters.
 
+![image](ishigami-baseline/baseline-x1.png)
+![image](ishigami-baseline/baseline-x2.png)
+![image](ishigami-baseline/baseline-x3.png)
+
+Mininum y: -10.232405704793319
+
+Maximum y: 15.306573219961262
+
+Distance: 25.53897892475458
 ### Idea 1
 Perform linear regression (LR). Then use MSE to compute upper and lower bounds on the prediction of the LR. Compute the Wasserstein distance of the upper and lower bounds.
 
