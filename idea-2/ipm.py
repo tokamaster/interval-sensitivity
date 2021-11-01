@@ -24,7 +24,7 @@ results = []
 x_train = []
 for sample in samples:
     results.append(ishigami(sample))
-    x_train.append([sample[1]])
+    x_train.append([sample[0]])
 
 model = PyIPM.IPM(polynomial_degree=10)
 
@@ -41,7 +41,7 @@ print(np.max(results)-np.min(results))
 
 plt.scatter(x, lower_bound[:, 0])
 plt.scatter(x, upper_bound[:, 0])
-plt.scatter(samples[:, 1], results, color='black')
+plt.scatter(samples[:, 0], results, color='black')
 plt.show()
 
 x = np.sort(lower_bound[:, 0])

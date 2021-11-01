@@ -30,16 +30,16 @@ for sample in samples:
 points = []
 
 for i in range(len(results)):
-    points.append([samples[i, 1], results[i]])
+    points.append([samples[i, 0], results[i]])
 
 points = np.array(points)
 
 #alpha = alphashape.optimizealpha(points)
 #print(alpha)
-#for x3 use 2.0
-#for x2 use 1.87
-#for x1 use 4.0
-hull = alphashape.alphashape(points, 1.87)
+#for x3 use 2.0 area = 12.5
+#for x2 use 1.87 area = 11.8
+#for x1 use 4.0 area = 9.5
+hull = alphashape.alphashape(points, 2.0)
 hull_pts = hull.exterior.coords.xy
 
 upper = []
