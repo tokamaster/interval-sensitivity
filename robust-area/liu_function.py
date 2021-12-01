@@ -6,6 +6,8 @@ np.random.seed(66)
 
 def liu_function(n):
     """Found in:
+    Section 5.1.2
+
     Liu, H., Chen, W., and Sudjianto, A. (April 24, 2005).
     "Relative Entropy Based Method for Probabilistic
     Sensitivity Analysis in Engineering Design."
@@ -20,11 +22,13 @@ def liu_function(n):
 
     return x1/x2, x1, x2
 
-samples = liu_function(50000)
+samples,x1,x2 = liu_function(50000)
+print(np.min(x1), np.max(x1))
+print(np.min(x2), np.max(x2))
 plt.scatter(samples[1], samples[0])
 plt.show()
 
-print("x1 area:", area_calculator(samples[1],samples[0],step_size=95))
-print("x2 area:", area_calculator(samples[2],samples[0],step_size=95))
+print("x1 area:", area_calculator(samples[1],samples[0],step_size=95,plot=True))
+print("x2 area:", area_calculator(samples[2],samples[0],step_size=95,plot=True))
 
 

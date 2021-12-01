@@ -28,6 +28,8 @@ results = []
 for sample in samples:
     results.append(ishigami(sample))
 print("output interval:", np.max(results)-np.min(results))
+print("max y:", np.max(results))
+print("min y:", np.min(results))
 
 x1 = area_calculator(samples[:, 0], results, plot=False, step_size=500)
 x2 = area_calculator(samples[:, 1], results, plot=False, step_size=500)
