@@ -8,9 +8,9 @@ def cross_function(x1,x2,x3,noise):
     0.2*x1-5*x2+10*x2*I+noise
     where x1,x2,I are uniform in [-1,1] and noise normal(0,1)
 
-    I is an identity function:
-    1 when I>=0
-    0 when I<0
+    I(x3) is a function similar to Kronecker delta:
+    1 when x3>=0
+    0 when x3<0
     """
     a = []
     for element in x3:
