@@ -16,7 +16,7 @@ def ishigami(x, a=5, b=0.1):
 lower_bounds = [-3.14, -3.14, -3.14]
 upper_bounds = [3.14, 3.14, 3.14]
 
-n_samples = 100000
+n_samples = 500000
 samples = lhs(len(lower_bounds), samples=n_samples)
 
 #Latin Hypercube Sampling of means
@@ -31,9 +31,9 @@ print("output interval:", np.max(results)-np.min(results))
 print("max y:", np.max(results))
 print("min y:", np.min(results))
 
-x1 = area_calculator(samples[:, 0], results, plot=False, step_size=500)
-x2 = area_calculator(samples[:, 1], results, plot=False, step_size=500)
-x3 = area_calculator(samples[:, 2], results, plot=False, step_size=500)
+x1 = area_calculator(samples[:, 0], results, plot=True, step_size=1000)
+x2 = area_calculator(samples[:, 1], results, plot=True, step_size=1000)
+x3 = area_calculator(samples[:, 2], results, plot=True, step_size=1000)
 
 print("x1 area:", x1)
 print("x2 area:", x2)

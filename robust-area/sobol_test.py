@@ -1,3 +1,4 @@
+from cmath import pi
 from SALib.sample import saltelli
 from SALib.analyze import sobol
 from SALib.test_functions import Ishigami
@@ -33,6 +34,49 @@ def cross_function(input):
     return np.array(solution)
 
 
+def ishigami(x, a=5, b=0.1):
+    solution = []
+    for element in x:
+        solution.append(np.sin(element[0])+a*np.sin(element[1])**2+b*np.sin(element[0])*element[2]**4)
+    return np.array(solution)
+
 param_values = saltelli.sample(problem, 1024)
 Y = cross_function(param_values)
 Si = sobol.analyze(problem, Y, print_to_console=True)
+
+problem = {
+    'names': ['x1', 'x2', 'x3'],
+    'num_vars': 3,
+    'bounds': [[-pi, pi], [-pi, pi], [-pi, pi]],
+    'dists': ['unif', 'unif', 'unif']
+}
+param_values = saltelli.sample(problem, 1024)
+Y = ishigami(param_values)
+Si = sobol.analyze(problem, Y, print_to_console=True)
+
+def true_total_sobol(a,b):
+    #total effects
+    vt1 = 0.5*(1+(b*pi**4)/5)**2 + 8*(b**2)*(pi**8)/225
+    vt2 = a**2/8
+    vt3 = 8*(b**2)*(pi**8)/225
+    vy = a**2/8+b*pi**4/5+b**2*pi**8/18+0.5
+    st1 = vt1/vy
+    st2 = vt2/vy
+    st3 = vt3/vy
+    return st1, st2, st3
+
+def true_first_sobol(a,b):
+    #first order effects
+    v1 = 0.5*(1+b*pi**4/5)**2
+    v2 = a**2/8
+    v3 = 0
+    vy = a**2/8+b*pi**4/5+b**2*pi**8/18+0.5
+    s1 = v1/vy
+    s2 = v2/vy
+    s3 = v3/vy
+    return s1, s2, s3
+
+st1, st2, st3 = true_total_sobol(7,0.1)
+print("True Total Sobol':", st1, st2, st3)
+s1, s2, s3 = true_first_sobol(7,0.1)
+print("True First-Order Sobol':", s1, s2, s3)
