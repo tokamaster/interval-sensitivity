@@ -1,0 +1,54 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{I, G, T, and R}{I et~al.}{2020}]{JRC122132}
+I, A., L.~G, M.~T, and R.~R (2020).
+\newblock Uncertainty and sensitivity analysis for policy decision making.
+\newblock ~(Publications Office of the European Union).
+
+\bibitem[\protect\citeauthoryear{Razavi, Jakeman, Saltelli, Prieur, Iooss,
+  Borgonovo, Plischke, Piano, Iwanaga, Becker, et~al.}{Razavi
+  et~al.}{2021}]{razavi2021future}
+Razavi, S., A.~Jakeman, A.~Saltelli, C.~Prieur, B.~Iooss, E.~Borgonovo,
+  E.~Plischke, S.~L. Piano, T.~Iwanaga, W.~Becker, et~al. (2021).
+\newblock The future of sensitivity analysis: An essential discipline for
+  systems modeling and policy support.
+\newblock {\em Environmental Modelling \& Software\/}~{\em 137}, 104954.
+
+\bibitem[\protect\citeauthoryear{Saltelli, Annoni, Azzini, Campolongo, Ratto,
+  and Tarantola}{Saltelli et~al.}{2010}]{saltelli2010variance}
+Saltelli, A., P.~Annoni, I.~Azzini, F.~Campolongo, M.~Ratto, and S.~Tarantola
+  (2010).
+\newblock Variance based sensitivity analysis of model output. design and
+  estimator for the total sensitivity index.
+\newblock {\em Computer physics communications\/}~{\em 181\/}(2), 259--270.
+
+\bibitem[\protect\citeauthoryear{Saltelli and Marivoet}{Saltelli and
+  Marivoet}{1990}]{saltelli1990non}
+Saltelli, A. and J.~Marivoet (1990).
+\newblock Non-parametric statistics in sensitivity analysis for model output: a
+  comparison of selected techniques.
+\newblock {\em Reliability Engineering \& System Safety\/}~{\em 28\/}(2),
+  229--253.
+
+\bibitem[\protect\citeauthoryear{Saltelli, Tarantola, Campolongo, and
+  Ratto}{Saltelli et~al.}{2004}]{saltelli2004sensitivity}
+Saltelli, A., S.~Tarantola, F.~Campolongo, and M.~Ratto (2004).
+\newblock {\em Sensitivity analysis in practice: a guide to assessing
+  scientific models}, Volume~1.
+\newblock Wiley Online Library.
+
+\bibitem[\protect\citeauthoryear{Sudret}{Sudret}{2008}]{sudret2008global}
+Sudret, B. (2008).
+\newblock Global sensitivity analysis using polynomial chaos expansions.
+\newblock {\em Reliability engineering \& system safety\/}~{\em 93\/}(7),
+  964--979.
+
+\bibitem[\protect\citeauthoryear{Wagg, Worden, Barthorpe, and Gardner}{Wagg
+  et~al.}{2020}]{wagg2020digital}
+Wagg, D., K.~Worden, R.~Barthorpe, and P.~Gardner (2020).
+\newblock Digital twins: state-of-the-art and future directions for modeling
+  and simulation in engineering dynamics applications.
+\newblock {\em ASCE-ASME J Risk and Uncert in Engrg Sys Part B Mech
+  Engrg\/}~{\em 6\/}(3).
+
+\end{thebibliography}

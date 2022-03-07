@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: esrel2022-paper.aux
+The style file: chicago.bst
+Database file #1: References.bib
+Warning--no journal in JRC122132
+Warning--no volume for JRC122132
+Warning--page numbers missing in JRC122132
+Warning--page numbers missing in wagg2020digital
+You've used 7 entries,
+            2861 wiz_defined-function locations,
+            660 strings with 6615 characters,
+and the built_in function-call counts, 6020 in all, are:
+= -- 431
+> -- 621
+< -- 1
++ -- 198
+- -- 204
+* -- 637
+:= -- 1139
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 65
+chr.to.int$ -- 7
+cite$ -- 11
+duplicate$ -- 121
+empty$ -- 279
+format.name$ -- 228
+if$ -- 1088
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 8
+newline$ -- 38
+num.names$ -- 70
+pop$ -- 48
+preamble$ -- 1
+purify$ -- 108
+quote$ -- 0
+skip$ -- 128
+stack$ -- 0
+substring$ -- 235
+swap$ -- 39
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 130
+warning$ -- 4
+while$ -- 57
+width$ -- 0
+write$ -- 94
+(There were 4 warnings)

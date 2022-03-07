@@ -1,0 +1,173 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  esrel2020-paper.tex   :   08/11/2019 			                     %%
+%%  Text file to use with rps-esrel2020. written in Latex2e.             %%
+%%  The content, structure, format and layout of this style file is the  %%
+%%  property of Research Publishing Services                             %%
+%%  Copyright (c) 2011-2018 Research Publishing Services,                %%
+%%  All rights are reserved.                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[twocolumn]{rps-esrl2020}
+\usepackage{lipsum}
+\usepackage{natbib}
+%\documentclass[draft, twocolumn]{rps-esrl2020}
+
+\def\papername{\jobname}
+
+\def\ds{\displaystyle}
+
+%\usepackage[authordate,backend=biber]{biblatex-chicago}
+
+
+\begin{document}
+
+\markboth{E. Miralles-Dolz, A. Gray, M. de Angelis, E. Patelli}{Interval-Based Sensitivity Analysis for Epistemic Uncertainty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Plase keep this command for single column for abstract section.
+\twocolumn[
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Interval-Based Sensitivity Analysis for Epistemic Uncertainty}
+
+\author{Enrique Miralles-Dolz}
+
+\address{Institute for Risk and Uncertainty, University of Liverpool, United Kingdom. \email{enmidol@liverpool.ac.uk}}
+\address{Culham Centre for Fusion Energy, United Kingdom Atomic Energy Authority, United Kingdom}
+
+\author{Ander Gray}
+
+\address{Institute for Risk and Uncertainty, University of Liverpool, United Kingdom. \email{akgray@liverpool.ac.uk}}
+\address{Culham Centre for Fusion Energy, United Kingdom Atomic Energy Authority, United Kingdom}
+
+\author{Marco de Angelis}
+
+\address{Institute for Risk and Uncertainty, University of Liverpool, United Kingdom. \email{mda@liverpool.ac.uk}}
+
+\author{Edoardo Patelli}
+
+\address{Centre for Intelligent Infrastructure, University of Strathclyde, United Kingdom. \email{edoardo.patelli@strath.ac.uk}}
+
+\begin{abstract}
+	The objective of sensitivity analysis is to understand how the input uncertainty of a mathematical model contributes to its output uncertainty.
+	In the context of a digital twin, sensitivity analysis is paramount for the automatic verification and validation of physical models, and can also
+	be used as a decision support tool to determine on which parameter to invest more empirical effort. Yet, sensitivity analysis often requires making
+	assumptions about the inputs such as probability distribution functions, as it is the case in variance-based methods, or relies on surrogate models
+	that also introduce more assumptions, as in kriging or polynomial chaos. It can be the case that one cannot reliably assign probability distribution
+	functions if the model is dominated by epistemic uncertainties, or the complexity of the model is such that surrogate models cannot accurately capture
+	its behaviour.
+
+	We present a non-probabilistic sensitivity analysis method which requires no assumptions about the input probability distributions: the uncertainty in
+	the input is expressed in the form of intervals, and employs the width of the output interval as the only measure, in the same way that interval analysis.
+	As a positive by-product, the method also returns all the information that could be obtained with the reduction of the input interval to a single value,
+	also called pinching. We use the Ishigami function as test case to show the performance of the proposed method, and compare it with Sobol indices.
+\end{abstract}
+
+\keywords{epistemic uncertainty, uncertainty quantification, sensitivity analysis, interval arithmetic, sobol indices, ishigami function.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Please keep this closing bracket to complete the single column format for abstract.
+]
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+Prediction is inherent in science, because prediction is essential to test theories and their consequences.
+Thanks to the power of modern computation, the prediction of mathematical models (i.e. their output) representing natural phenomena can now be tested at unprecedented scales.
+Digital twins attempt to exploit this advantage by modelling physical systems and allowing their evaluation via simulation, as these systems are often technically and
+economically prohibitive to operate in the physical world \cite{wagg2020digital}.
+However, digital twins are often so complex that it is not possible to infer their prediction from experience and judgement alone.
+Therefore, it is desirable to verify and validate the prediction of these models without having to rely on subjectivity \cite{JRC122132}.
+Sensitivity analysis can help with this task, by indicating what model parameters are responsible for the prediction of the model, and how
+that prediction depends on them [reference saltelli].
+
+Generally, sensitivity analysis methods fall within three categories: derivative-based, distribution-based, and regression-based \cite{razavi2021future}.
+Derivative-based approaches attempt to compute the derivative of the model functions, either analytically or numerically, and measure the change in
+the output when the inputs are perturbed around a base point [reference].
+Distribution-based methods, such as Sobol' indices, decompose the output variance and assigns the partitions to the input variances, indicating how much
+of the output variance is caused by each input variance \cite{saltelli2010variance}.
+Lastly, regression-based approaches employ correlation coefficients, regression coefficients, or other machine learning methods [reference].
+
+However, these approaches present some limitations that can make them unsuitable in certain cases.
+For instance, the analytical description of the functions in the model are not always available, since it is not uncommon to deal with black-box models or
+models with too many functions that make unpractical or difficult their analytical derivation.
+Also, derivative-based methods require defining a base point for each input parameter, and a perturbation size.
+It is not rare to find a situation where there is not consensus about those parameters.
+A similar argument can be made for distribution-based methods, which require a precise definition of the probability distribution functions of the model input
+parameters.
+Lastly, to successfully apply regression-based methods, it is necessary to know the behavior of the model under investigation, which is not always known.
+For example, correlation coefficients are suitable when the model is monotonic (or rank coefficients when it is non-monotonic).
+For these reasons, it is desirable to find a sensitivity analysis method that:
+
+\begin{enumerate}
+	\item Does not require knowing the analytical description of the model functions.
+	\item Does not require defining base values for any input parameter.
+	\item Does not require to assume the input parameters follow a precise probability distribution function.
+	\item It is independent of the model behavior.
+\end{enumerate}
+
+This paper attempts to present an interval-based sensitivity analysis method that fulfills these requirements.
+%mention that 2,3,4 are related to epistemic uncertainty?
+Section 2 introduces some basic concepts in interval arithmetic which are useful to introduce the method.
+In Section 3 it is explained how the sensitivity indices are calculated in the interval approach, and the
+pinching measure that can be calculated additionally.
+Lastly, Section 4 compares the performance of the interval-based method against Sobol' indices in two test cases
+(Ishigami function and a basic physics problem), followed by the conclusion in section 5.
+
+\begin{enumerate}
+	\item Explain sensitivity analysis. [DONE]
+	\item Explain main approaches and their limitation. [DONE]
+	\item Explain epistemic uncertainty in engineering -slides- (we cannot afford those limitations) [DONE]
+	\item Explain structure of the paper [DONE]
+\end{enumerate}
+
+\section{Interval Uncertainty Propagation}
+
+Minimum unit of assumption (or knowledge).
+
+\begin{enumerate}
+	\item Explain epistemic uncertainty can be modeled as intervals.
+	\item Explain interval uncertainty can be propagated with: arithmetic, sampling
+	\item In te case the analytical function(s) are available, interval arithmetic gets the rigorous calculation.
+	If the function(s) are not available, the propagation can be performed with sampling.
+\end{enumerate}
+
+\section{Interval-Based Sensitivity}
+
+\begin{enumerate}
+	\item Explain the area stuff
+	\item Explain extreme cases (e.g. perfect dependence = index of 1 = no area, independence = index of 0 = all area)
+	\item Explain pinching.
+\end{enumerate}
+
+\section{Application}
+
+\begin{enumerate}
+	\item Explain simple function (or physics based example?).
+	\item Explain comparison with Sobol indices.
+	\item Show results.
+\end{enumerate}
+
+\begin{enumerate}
+	\item Explain Ishigami function
+	\item Explain comparison with sobol indices (arguably the most common SA method)
+	\item Show results.
+\end{enumerate}
+
+
+\section{Conclusion}
+
+
+\begin{acknowledgements}
+% Let's keep the aknowledgement in the same font as the body text
+This section and its heading (unnumbered) should be in 9pt and come before the appendices and references.  Dedication and funding information may also be included here. 
+\end{acknowledgement}
+
+\section*{References}
+\bibliographystyle{Chicago}
+\bibliography{sample.bib}
+
+
+\end{document}
+
+
+
