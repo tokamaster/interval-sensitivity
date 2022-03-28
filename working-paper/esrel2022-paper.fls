@@ -134,10 +134,10 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /home/enmidol/Documents/interval-sensitivity/working-paper/esrel2022-paper.bbl
 INPUT /home/enmidol/Documents/interval-sensitivity/working-paper/esrel2022-paper.bbl
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
@@ -146,6 +146,12 @@ INPUT /home/enmidol/Documents/interval-sensitivity/working-paper/esrel2022-paper
 INPUT /home/enmidol/Documents/interval-sensitivity/working-paper/esrel2022-paper.out
 INPUT /home/enmidol/Documents/interval-sensitivity/working-paper/esrel2022-paper.out
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb

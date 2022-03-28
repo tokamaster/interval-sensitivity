@@ -8,7 +8,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[twocolumn]{rps-esrel2022}
-%\documentclass[draft, twocolumn]{rps-esrl2012} 
+%\documentclass[draft, twocolumn]{rps-esrl2012}
 
 \def\papername{\jobname}
 
@@ -73,7 +73,7 @@
 \section{Introduction}
 
 Prediction is inherent in science, because prediction is essential to test theories and their consequences.
-Thanks to the power of modern computation, the prediction of mathematical models (i.e. their output) representing natural phenomena can now be tested at unprecedented scales.
+Thanks to the power of modern computation, the prediction of natural phenomena represented by mathematical models can now be tested at unprecedented scales.
 Digital twins attempt to exploit this advantage by modelling physical systems and allowing their evaluation via simulation, as these systems are often technically and
 economically prohibitive to operate in the physical world (\cite{wagg2020digital}).
 However, digital twins are often so complex that it is not possible to infer their prediction from experience and judgement alone.
@@ -123,22 +123,84 @@ Lastly, Section 4 compares the performance of the interval-based method against 
 	\item Explain structure of the paper [DONE]
 \end{enumerate}
 
-\section{Interval Uncertainty Propagation}
+\section{Interval Analysis}
 
-Minimum unit of assumption (or knowledge).
+With interval analysis is possible to set bounds to the output of a model function.
+When capturing the rigorous enclosure of a model output one can know with certainty what the model represents, and decide
+whether it adequately depicts reality or not.
+Also, expressing parameter uncertainties in the form of intervals has the advantage of requiring no assumptions about the uncertainty, making intervals ideal to
+capture epistemic uncertainty.
+
+The two main methods to compute with intervals are interval arithmetic and sampling.
+In the former, the mathematical operations are replaced to account of intervals as in [REF walley].
+This method requires access to the analytical description of the models (i.e. source code) to make them suitable for
+interval arithmetic.
+Sampling methods, on the other hand, do not require to adapt the source code for interval arithmetic.
+A typical sampling procedure begins assuming uniform distributions for the uncertain parameters, performing
+the sampling using the Latin Hypercube algorithm, and extracting the minimum and maximum of the outputs of interest (i.e. their
+interval) [ref Helton].
+Some of the drawbacks of the sampling methods are that the sampling algorithm could introduce unexpected correlations in the inputs [ref saltelli],
+and the output interval is an inner approximation instead of an outer approximation (when quantifying uncertainty, it is better to be safe than sorry).
+
+The sensitivity analysis presented in this paper can be applied with both methods of uncertainty propagation, employing the widths of the input and output intervals as
+the only required measures.
+Therefore, it can be used with black-box or sophisticated models that cannot be adapted to work with interval arithmetic (and therefore the uncertainty propagation
+has to be performed via sampling), or with models which already adopt interval arithmetic.
 
 \begin{enumerate}
-	\item Explain epistemic uncertainty can be modeled as intervals.
-	\item Explain interval uncertainty can be propagated with: arithmetic, sampling
+	\item Explain epistemic uncertainty can be modeled as intervals. [DONE]
+	\item Explain interval uncertainty can be propagated with: arithmetic, sampling [DONE]
 	\item In te case the analytical function(s) are available, interval arithmetic gets the rigorous calculation.
-	If the function(s) are not available, the propagation can be performed with sampling.
+	If the function(s) are not available, the propagation can be performed with sampling. [DONE]
 \end{enumerate}
 
 \section{Interval-Based Sensitivity Index}
 
+The proposed sensitivity index captures the dependence of the model output on the inputs measuring the area described by these. %the input and output of the model function.
+Figure X serves as an illustrative example.
+It shows the scatterplots of the evaluation of a black-box function $y = f(x_1,x_2)$ with $x_1 \in [-5,5]$ and $x_2 \in [-5,5]$, with samples generated using
+Latin Hypercube sampling.
+As explained in [REF Helton Davis], scatterplot visualization is a straightforward qualitative method of inspecting dependencies in model functions.
+In this example it is possible to see how $y$ has a linear dependence with $x_1$, but shows little or no dependence with $x_2$.
+The objective is to turn this qualitative \textit{intuition} into a measurement.
+
+%figure here
+
+The dependence can be captured measuring the area described by the scatterplot, and comparing it to the box defined by $(\underline{y},\overline{y})\times(\underline{x_i},\overline{x_i})$.
+If the measured area equals to the box, then it can be said that the output has no dependence on that input (as occurs for $x_2$ in Figure X).
+If the measured area has a value of 0, it means that the output is determined by that input.
+Then, any other degree of dependence will fall in between these two extreme cases (as in $x_1$ in Figure X).
+It is important to note that the measurement of the area will be an approximation of the actual area, being a consequence of the sampling method or the subintervalization
+if interval arithmetic is employed to solve the model functions.
+
+The sensitivity index is calculated with the following formula:
+
+\begin{equation}
+	S_i = 1 - \frac{\sum_n^N(\underline{x_i},\overline{x_i})_n\times(\underline{y},\overline{y})_n}{(\underline{y},\overline{y})\times(\underline{x_i},\overline{x_i})}
+\end{equation}
+
+where $N$ is the total number of subintervals.
+Therefore, $S_i$ is a sensitivity index ranging from 0 (i.e. $y$ is independent of $x_i$) to 1 (i.e. $y$ is determined by $x_i$).
+
+The area can be calculated with two different methods depending on whether interval arithmetic was employed to calculate the functions or it was done though sampling.
+In the case of interval arithmetic the calculation is straightforward as the subintervals can be recycled and the boxes described by these can be easily computed, as in Figure X.
+On the other hand, if sampling methods were chosen, then the area can be calculated employing an integration method similar to the trapezoidal rule: a step size is defined to
+sweep through subintervals of $xi$ in the data, the minimum $\underline{y}$ and maximum $\overline{y}$ is returned for each subinterval, and the box is computed as usual.
+The main drawback of the integration method is that a step size has to be defined manually, and the impact of this parameter on the proposed sensitivity analysis method has not
+been studied yet.
+However, the authors guess that since the method is similar to the trapezoidal rule, it should be possible to place error bounds on the accuracy of the sensitivity index.
+
+%Figure with subboxes
+
+Explain results using the example
+
+Lastly, an important by-product of the sensitivity index proposed here is that its calculation also contains...
 \begin{enumerate}
-	\item Explain the area stuff
-	\item Explain extreme cases (e.g. perfect dependence = index of 1 = no area, independence = index of 0 = all area)
+	\item Introduce the area method (overview and illustrating example). [DONE]
+	\item Use example and extreme cases to illustrate (e.g. perfect dependence = index of 1 = no area, independence = index of 0 = all area) [DONE]
+	\item Show equation of the sensitivity index [DONE]
+	\item Explain how it does with arithmetic (subintervalisation) [DONE]
+	\item Explain how it does with sampling (integration similar to trapezoid rule) [DONE]
 	\item Explain pinching.
 \end{enumerate}
 
@@ -155,7 +217,6 @@ Minimum unit of assumption (or knowledge).
 	\item Explain comparison with sobol indices (arguably the most common SA method)
 	\item Show results.
 \end{enumerate}
-
 
 \section{Conclusion}
 
