@@ -140,7 +140,7 @@ A typical sampling procedure begins assuming uniform distributions for the uncer
 the sampling using the Latin Hypercube algorithm, and extracting the minimum and maximum of the outputs of interest (i.e. their
 interval) [ref Helton].
 Some of the drawbacks of the sampling methods are that the sampling algorithm could introduce unexpected correlations in the inputs [ref saltelli],
-and the output interval is an inner approximation instead of an outer approximation (when quantifying uncertainty, it is better to be safe than sorry).
+and the output interval will be an inner approximation instead of an outer approximation (when quantifying uncertainty it is better to be safe than sorry).
 
 The sensitivity analysis presented in this paper can be applied with both methods of uncertainty propagation, employing the widths of the input and output intervals as
 the only required measures.
@@ -157,14 +157,30 @@ has to be performed via sampling), or with models which already adopt interval a
 \section{Interval-Based Sensitivity Index}
 
 The proposed sensitivity index captures the dependence of the model output on the inputs measuring the area described by these. %the input and output of the model function.
-Figure X serves as an illustrative example.
+Figure 1 serves as an illustrative example.
 It shows the scatterplots of the evaluation of a black-box function $y = f(x_1,x_2)$ with $x_1 \in [-5,5]$ and $x_2 \in [-5,5]$, with samples generated using
 Latin Hypercube sampling.
 As explained in [REF Helton Davis], scatterplot visualization is a straightforward qualitative method of inspecting dependencies in model functions.
-In this example it is possible to see how $y$ has a linear dependence with $x_1$, but shows little or no dependence with $x_2$.
+In this example it is possible to see how $y$ has a linear dependence with $x_1$ (Figure 1 (a)), but shows little or no dependence with $x_2$ (Figure 2 (b)).
 The objective is to turn this qualitative \textit{intuition} into a measurement.
 
-%figure here
+\begin{figure}
+	\centering
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_x1.pdf} \\[\abovecaptionskip]
+	  \small (a) Scatterplot of $y=f(x_1,x_2)$ and $x_1$.
+	\end{tabular}
+
+	\vspace{\floatsep}
+
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_x2.pdf} \\[\abovecaptionskip]
+	  \small (b) Scatterplot of $y=f(x_1,x_2)$ and $x_2$.
+	\end{tabular}
+
+	\caption{Results of the evaluation of a black-box function $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 1000 samples generated with Latin Hypercube sampling.
+	Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}\label{fig:myfig}
+\end{figure}
 
 The dependence can be captured measuring the area described by the scatterplot, and comparing it to the box defined by $(\underline{y},\overline{y})\times(\underline{x_i},\overline{x_i})$.
 If the measured area equals to the box, then it can be said that the output has no dependence on that input (as occurs for $x_2$ in Figure X).
@@ -183,25 +199,36 @@ where $N$ is the total number of subintervals.
 Therefore, $S_i$ is a sensitivity index ranging from 0 (i.e. $y$ is independent of $x_i$) to 1 (i.e. $y$ is determined by $x_i$).
 
 The area can be calculated with two different methods depending on whether interval arithmetic was employed to calculate the functions or it was done though sampling.
-In the case of interval arithmetic the calculation is straightforward as the subintervals can be recycled and the boxes described by these can be easily computed, as in Figure X.
+In the case of interval arithmetic the calculation is straightforward as the subintervals can be recycled and the boxes described by these can be easily computed.
 On the other hand, if sampling methods were chosen, then the area can be calculated employing an integration method similar to the trapezoidal rule: a step size is defined to
 sweep through subintervals of $xi$ in the data, the minimum $\underline{y}$ and maximum $\overline{y}$ is returned for each subinterval, and the box is computed as usual.
 The main drawback of the integration method is that a step size has to be defined manually, and the impact of this parameter on the proposed sensitivity analysis method has not
 been studied yet.
 However, the authors guess that since the method is similar to the trapezoidal rule, it should be possible to place error bounds on the accuracy of the sensitivity index.
 
-%Figure with subboxes
-
 Explain results using the example
 
-Lastly, an important by-product of the sensitivity index proposed here is that its calculation also contains...
+%Figure with subboxes
+
+Lastly, an important by-product of the proposed sensitivity index is that its calculation also entails the so called \textit{pinching} method [REF].
+The \textit{pinching} sensitivity analysis calculates the reduction on the output uncertainty when the uncertainty of an input is reduced from the interval to a single value.
+One drawback of this method is that a single value for each input interval has to be chosen (or several values within the interval, with the consequent
+increase of computational cost).
+However, the interval-based sensitivity index retrieves all the \textit{pinching} information possible for the given number of subintervals; so not only the
+output dependence on the input is measured, but also how the input affects the output along its interval.
+Figure 3 shows how reducing uncertainty in $x_2$ entails no reduction on the uncertainty of $y$, whilst reducing the uncertainty on $x_1$ has different consequences on the
+uncertainty of $y$ depending on the value of $x_1$.
+For example, the maximum output uncertainty reduction is obtained pinching for $x_1 = 0$.
+
+%figures
+
 \begin{enumerate}
 	\item Introduce the area method (overview and illustrating example). [DONE]
 	\item Use example and extreme cases to illustrate (e.g. perfect dependence = index of 1 = no area, independence = index of 0 = all area) [DONE]
 	\item Show equation of the sensitivity index [DONE]
 	\item Explain how it does with arithmetic (subintervalisation) [DONE]
 	\item Explain how it does with sampling (integration similar to trapezoid rule) [DONE]
-	\item Explain pinching.
+	\item Explain pinching. [DONE]
 \end{enumerate}
 
 \section{Application}
