@@ -12,7 +12,7 @@ def displacement(width, height, load=1e6, length=5, young=10e9, density=600):
         disps.append(a+b)
     return disps
 
-lower_bounds = [0.05, 0.2]
+lower_bounds = [0.05, 0.49]
 upper_bounds = [0.3, 0.5]
 
 n_samples = 5000
@@ -25,7 +25,7 @@ for i in range(len(lower_bounds)):
 
 results = displacement(samples[:,0], samples[:,1])
 
-print("output interval:", np.max(results)-np.min(results))
+print("output interval width:", np.max(results)-np.min(results))
 print("max y:", np.max(results))
 print("min y:", np.min(results))
 
@@ -39,5 +39,5 @@ plt.show()
 x1 = area_calculator(samples[:, 0], results, plot=True, step_size=100)
 x2 = area_calculator(samples[:, 1], results, plot=True, step_size=100)
 
-print("x1 area:", x1)
-print("x2 area:", x2)
+print("beam width sensitivity measure:", x1)
+print("beam height sensitivity measure:", x2)

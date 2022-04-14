@@ -15,7 +15,7 @@ x3 = interval(-pi, pi)
 X = x1 × x2 × x3
 
 # Sub-intervalise interval box
-Nsub = 20;
+Nsub = 300;
 xs = mince(X, Nsub)
 
 # Eval sub-intervals
@@ -91,9 +91,9 @@ bigArea3 = diam(bigBoxU3.v[1]) * diam(bigBoxU3.v[2])
 areaU3 = sum([diam(x.v[1]) * diam(x.v[2]) for x in outU3])
 SA3 = 1 - areaU3/bigArea3
 
-plot(outU1)
-plot!(outU2)
-plot!(outU3)
+#plot(outU1)
+#plot!(outU2)
+#plot!(outU3)
 
 
 println("SA_x1: $SA1")

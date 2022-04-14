@@ -1,21 +1,21 @@
-using IntervalArithmetic, Plots, Distributions
+using IntervalArithmetic, Plots
 
 
 ## Define function. Interval box input.
-a = -5; d = Normal()
-f(x :: IntervalBox) = a*x.v[1] #+ rand(d)
+a = 5; b = 0.1
+f(x :: IntervalBox) = x.v[1]*x.v[2]+x.v[3]^2
 
 
 ## Input variables
-x1 = interval(-5, 5)
-x2 = interval(-5, 5)
-
+x1 = interval(-1, 1)
+x2 = interval(-1, 1)
+x3 = interval(-1, 1)
 
 # Make interval box
-X = x1 × x2
+X = x1 × x2 × x3
 
 # Sub-intervalise interval box
-Nsub = 100;
+Nsub = 300;
 xs = mince(X, Nsub)
 
 # Eval sub-intervals
@@ -24,10 +24,12 @@ outs = f.(xs)
 # Extract marginal inputs
 x1s = [x.v[1] for x in xs]
 x2s = [x.v[2] for x in xs]
+x3s = [x.v[3] for x in xs]
 
 # Make input/output boxes
 outX1s = x1s .× outs
 outX2s = x2s .× outs
+outX3s = x3s .× outs
 
 # Plots (expensive with many boxes)
 #plot(outX1s, alpha = 0.01)
@@ -71,9 +73,29 @@ bigArea2 = diam(bigBoxU2.v[1]) * diam(bigBoxU2.v[2])
 areaU2 = sum([diam(x.v[1]) * diam(x.v[2]) for x in outU2])
 SA2 = 1 - areaU2/bigArea2
 
-plot(outU1)
-plot!(outU2)
+#####   Compute x3 index    ######
+
+x3Unique = unique(x3s)
+
+outsUnion3 = Vector{Interval{Float64}}(undef, length(x3Unique))
+for i = 1:length(x3Unique)
+    ids = x3s .== x3Unique[i]
+    outsUnion3[i] = hull(outs[ids])
+end
+
+outU3 = x3Unique .× outsUnion3
+
+bigBoxU3 = hull(x3Unique) × hull(outsUnion3)
+
+bigArea3 = diam(bigBoxU3.v[1]) * diam(bigBoxU3.v[2])
+areaU3 = sum([diam(x.v[1]) * diam(x.v[2]) for x in outU3])
+SA3 = 1 - areaU3/bigArea3
+
+#plot(outU1)
+#plot!(outU2)
+#plot!(outU3)
+
 
 println("SA_x1: $SA1")
 println("SA_x2: $SA2")
-
+println("SA_x3: $SA3")

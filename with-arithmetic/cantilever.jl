@@ -3,11 +3,11 @@ using IntervalArithmetic, Plots, Distributions
 ## Define function. Interval box input.
 load = 1e6; lengthz = 5; young = 10e9; density = 600
 
-f(x:: IntervalBox) = (density*9.81*x.v[1]*lengthz^4)/(8*young*(x.v[1]*x.v[2]^3/12)) + (load*lengthz^3)/(3*young*(x.v[1]*x.v[2]^3/12))
+f(x:: IntervalBox) = (density*9.81*x.v[1]*x.v[2]*lengthz^4)/(8*young*(x.v[1]*x.v[2]^3/12)) + (load*lengthz^3)/(3*young*(x.v[1]*x.v[2]^3/12))
 
 ## Input variables
-x1 = interval(0.05, 0.3)
-x2 = interval(0.2, 0.5)
+x1 = interval(0.05, 0.3) # width
+x2 = interval(0.2, 0.5) # height
 
 
 # Make interval box

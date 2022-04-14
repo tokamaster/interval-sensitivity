@@ -6,7 +6,7 @@ def displacement(width, height, load=1e6, length=5, young=10e9, density=600):
     disps = []
     for i in range(len(width)):
         inertia = width[i]*height[i]**3/12
-        a = (density*9.81*width[i]*length**4)/(8*young*inertia)
+        a = (density*9.81*width[i]*height[i]*length**4)/(8*young*inertia)
         b = (load*length**3)/(3*young*inertia)
         disps.append(a+b)
     return np.array(disps)
@@ -20,3 +20,9 @@ problem = {
 param_values = saltelli.sample(problem, 1024)
 Y = displacement(param_values[:,0],param_values[:,1])
 Si = sobol.analyze(problem, Y, print_to_console=True)
+
+import matplotlib.pyplot as plt
+plt.scatter(param_values[:,0],Y)
+plt.show()
+plt.scatter(param_values[:,1],Y)
+plt.show()

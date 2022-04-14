@@ -72,7 +72,7 @@
 
 \section{Introduction}
 
-Prediction is inherent in science, because prediction is essential to test theories and their consequences.
+Prediction is inherent to science since prediction is essential to test theories and their consequences.
 Thanks to the power of modern computation, the prediction of natural phenomena represented by mathematical models can now be tested at unprecedented scales.
 Digital twins attempt to exploit this advantage by modelling physical systems and allowing their evaluation via simulation, as these systems are often technically and
 economically prohibitive to operate in the physical world (\cite{wagg2020digital}).
@@ -128,11 +128,11 @@ Lastly, Section 4 compares the performance of the interval-based method against 
 With interval analysis is possible to set bounds to the output of a model function.
 When capturing the rigorous enclosure of a model output one can know with certainty what the model represents, and decide
 whether it adequately depicts reality or not.
-Also, expressing parameter uncertainties in the form of intervals has the advantage of requiring no assumptions about the uncertainty, making intervals ideal to
+Also, expressing parameter uncertainties in the form of intervals has the advantage of requiring no assumptions about the uncertainty, making intervals suitable to
 capture epistemic uncertainty.
 
 The two main methods to compute with intervals are interval arithmetic and sampling.
-In the former, the mathematical operations are replaced to account of intervals as in [REF walley].
+In the former, the mathematical operations are replaced to account for intervals as in [REF walley].
 This method requires access to the analytical description of the models (i.e. source code) to make them suitable for
 interval arithmetic.
 Sampling methods, on the other hand, do not require to adapt the source code for interval arithmetic.
@@ -142,7 +142,7 @@ interval) [ref Helton].
 Some of the drawbacks of the sampling methods are that the sampling algorithm could introduce unexpected correlations in the inputs [ref saltelli],
 and the output interval will be an inner approximation instead of an outer approximation (when quantifying uncertainty it is better to be safe than sorry).
 
-The sensitivity analysis presented in this paper can be applied with both methods of uncertainty propagation, employing the widths of the input and output intervals as
+The sensitivity analysis presented in this paper can be applied with both methods of interval analysis, employing the widths of the input and output intervals as
 the only required measures.
 Therefore, it can be used with black-box or sophisticated models that cannot be adapted to work with interval arithmetic (and therefore the uncertainty propagation
 has to be performed via sampling), or with models which already adopt interval arithmetic.
@@ -178,12 +178,14 @@ The objective is to turn this qualitative \textit{intuition} into a measurement.
 	  \small (b) Scatterplot of $y=f(x_1,x_2)$ and $x_2$.
 	\end{tabular}
 
-	\caption{Results of the evaluation of a black-box function $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 1000 samples generated with Latin Hypercube sampling.
-	Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}\label{fig:myfig}
+	\caption{Results of the evaluation of a black-box function $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 1000 samples generated with Latin Hypercube sampling.}
+	%Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}
+	\label{fig:myfig}
 \end{figure}
 
-The dependence can be captured measuring the area described by the scatterplot, and comparing it to the box defined by $(\underline{y},\overline{y})\times(\underline{x_i},\overline{x_i})$.
-If the measured area equals to the box, then it can be said that the output has no dependence on that input (as occurs for $x_2$ in Figure X).
+The dependence can be captured measuring the area described by the scatterplot, and comparing it to the box defined by $(\underline{y},\overline{y})\times(\underline{x_i},\overline{x_i})$,
+where $\underline{y},\overline{y}$ are the measured minimum and maximum of $y$, and $\underline{x_i},\overline{x_i}$ the minimum and maximum of the $i-th$ input parameter.
+If the measured area equals to the box area, then it can be said that the output has no dependence on that input (as occurs for $x_2$ in Figure X).
 If the measured area has a value of 0, it means that the output is determined by that input.
 Then, any other degree of dependence will fall in between these two extreme cases (as in $x_1$ in Figure X).
 It is important to note that the measurement of the area will be an approximation of the actual area, being a consequence of the sampling method or the subintervalization
@@ -204,21 +206,64 @@ On the other hand, if sampling methods were chosen, then the area can be calcula
 sweep through subintervals of $xi$ in the data, the minimum $\underline{y}$ and maximum $\overline{y}$ is returned for each subinterval, and the box is computed as usual.
 The main drawback of the integration method is that a step size has to be defined manually, and the impact of this parameter on the proposed sensitivity analysis method has not
 been studied yet.
-However, the authors guess that since the method is similar to the trapezoidal rule, it should be possible to place error bounds on the accuracy of the sensitivity index.
+However, it is possible that since the method is similar to the trapezoidal rule, it should be feasible to place error bounds on the accuracy of the sensitivity index.
 
-Explain results using the example
+%Show and explain figures with the sampling method
 
-%Figure with subboxes
+Figure 2 shows the 20 subintervals computed with interval arithmetic using the IntervalArithmetic package in Julia [REF].
+Note that since the function $y = f(x_1,x_2)$ is a black-box function, technically it should not be feasible to have access to
+its analytical description, and therefore the interval arithmetic approach would not be possible.
+Therefore, it has been included as an example to show how the interval arithmetic approach would work.
+
+The sensitivity indices for $x_1,x_2$ calculated with the sampling and arithmetic approaches are indicated in Table 1.
+Both approaches return the same ordering, indicating that $x_1$ is the dominant parameter.
+Note that the interval arithmetic approach captures that $x_2$ has no impact on the uncertainty of $y$ (it also can be seen in Figure 2, since the
+grey area equals to the red area), whilst the sampling approach is not that precise.
+This is caused by the fact the sampling approach is an inner approximation method, and the greater the number of samples,
+the more accurate the sensitivity index is.
+
+\begin{table}[!h]
+	\centering
+	\caption{Sensitivity indices for $x_1$ and $x_2$ with the sampling and arithmetic approaches.}
+	\label{tab:my-table}
+	\begin{tabular}{ccc}
+	\hline
+	Index & Sampling & Interval arithmetic \\ \hline
+	$S_1$ & 0.790    & 0.732               \\
+	$S_2$ & 0.197    & 0                   \\ \hline
+	\end{tabular}%
+\end{table}
+
+\begin{figure}
+	\centering
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_boxes_1.pdf} \\[\abovecaptionskip]
+	  \small (a) Visualisation of the 20 subintervals of $y=f(x_1,x_2)$ and $x_1$.
+	\end{tabular}
+
+	\vspace{\floatsep}
+
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_boxes_2.pdf} \\[\abovecaptionskip]
+	  \small (b) Visualisation of the 20 subintervals of $y=f(x_1,x_2)$ and $x_2$.
+	\end{tabular}
+
+	\caption{Results of the evaluation of $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 20 subintervals and interval arithmetic.
+	The sensitivity index is calculated as in Equation 1, where the numerator is equal to the area coloured in grey and the denominator
+	equal to the area coloured in red.}
+	%Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}
+	\label{fig:myfig}
+\end{figure}
 
 Lastly, an important by-product of the proposed sensitivity index is that its calculation also entails the so called \textit{pinching} method [REF].
 The \textit{pinching} sensitivity analysis calculates the reduction on the output uncertainty when the uncertainty of an input is reduced from the interval to a single value.
 One drawback of this method is that a single value for each input interval has to be chosen (or several values within the interval, with the consequent
 increase of computational cost).
 However, the interval-based sensitivity index retrieves all the \textit{pinching} information possible for the given number of subintervals; so not only the
-output dependence on the input is measured, but also how the input affects the output along its interval.
+output dependence on the input is measured, but also how the input affects the output along its domain.
 Figure 3 shows how reducing uncertainty in $x_2$ entails no reduction on the uncertainty of $y$, whilst reducing the uncertainty on $x_1$ has different consequences on the
 uncertainty of $y$ depending on the value of $x_1$.
-For example, the maximum output uncertainty reduction is obtained pinching for $x_1 = 0$.
+For example, the maximum output uncertainty reduction is obtained pinching at $x_1 = 0$.
 
 %figures
 

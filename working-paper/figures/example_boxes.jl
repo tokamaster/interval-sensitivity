@@ -1,10 +1,8 @@
-using IntervalArithmetic, Plots, Distributions
-
+using IntervalArithmetic, Plots, Distributions, ProbabilityBoundsAnalysis
 
 ## Define function. Interval box input.
 a = -4;
-f(x::IntervalBox) = a * x.v[1] + rand(Normal(0,sqrt(x.v[1]^2)))
-
+f(x::IntervalBox) = a * x.v[1] + interval(normal(0,sqrt(x.v[1]^2)).u[1],normal(0,sqrt(x.v[1]^2)).d[end] )
 
 ## Input variables
 x1 = interval(-5, 5)
@@ -71,9 +69,13 @@ bigArea2 = diam(bigBoxU2.v[1]) * diam(bigBoxU2.v[2])
 areaU2 = sum([diam(x.v[1]) * diam(x.v[2]) for x in outU2])
 SA2 = 1 - areaU2 / bigArea2
 
-plot(outU1)
-plot!(outU2)
-
 println("SA_x1: $SA1")
 println("SA_x2: $SA2")
 
+theme(:dao, palette=:grays, legend=false)
+
+Plots.plot(bigBoxU2, fillcolor="red", fillalpha=0.2)
+Plots.plot!(outU2, fillcolor="black", xguidefontsize=20, yguidefontsize=20, xtickfontsize=18, ytickfontsize=18, bottom_margin=4Plots.mm)
+Plots.xlabel!(L"x_2")
+Plots.ylabel!(L"y")
+Plots.savefig("example_boxes_2.pdf")

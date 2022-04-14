@@ -1,5 +1,6 @@
 import numpy as np
 from area_calculator import *
+import matplotlib.pyplot as plt
 
 def cross_function(x1,x2,x3,noise):
     """
@@ -27,6 +28,13 @@ noise = np.random.normal(loc=0,scale=1,size=10000)
 
 y = cross_function(x1,x2,x3,noise)
 
+plt.scatter(x1,y)
+plt.show()
+plt.scatter(x2, y)
+plt.show()
+plt.scatter(x3, y)
+plt.show()
+
 print("x1:", area_calculator(x1,y))
 print("x2:", area_calculator(x2,y))
-print("x3:", area_calculator(x3, y))
+print("x3:", area_calculator(x3,y))
