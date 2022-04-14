@@ -3,7 +3,7 @@ from pyDOE import *
 import matplotlib.pyplot as plt
 from scipy.stats.distributions import uniform
 from publib import set_style, fix_style
-from area_calculator import area_calculator
+from area_calculator import area_calculator, box_plotter
 set_style(['origin'])
 plt.rcParams['text.usetex'] = True
 
@@ -40,14 +40,23 @@ results = function_example(samples)
 #plt.xlabel('$x_2$')
 #plt.ylabel('$y$')
 #plt.tight_layout()
+#plt.grid(b=True, which='major', color='black')
 #fix_style(['origin'])
+#plt.savefig('example_x2_grid.pdf', bbox_inches='tight', dpi=300)
 
-#plt.savefig('example_x2.pdf', bbox_inches='tight', dpi=300)
-
-x1 = area_calculator(samples[:, 0], results, plot=True, step_size=20)
-x2 = area_calculator(samples[:, 1], results, plot=True, step_size=20)
+x1 = area_calculator(samples[:, 0], results, plot=False, step_size=20)
+x2 = area_calculator(samples[:, 1], results, plot=False, step_size=20)
 
 print("x1 sensitivity measure:", x1)
 print("x2 sensitivity measure:", x2)
 print(np.max(results))
 print(np.min(results))
+
+# Figure 2 generator
+#box_plotter(samples[:,0], results, step_size=20)
+#plt.xlabel(r'$x_1$')
+#plt.ylabel(r'$y$')
+#plt.tight_layout()
+#plt.grid(b=True, which='major',color='black')
+#fix_style(['origin'])
+#plt.savefig('example_sampling_x1_grid.pdf', bbox_inches='tight', dpi=300)

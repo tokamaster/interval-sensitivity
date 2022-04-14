@@ -49,3 +49,38 @@ def area_calculator(x, y, step_size=100, plot=False):
         plt.hist(bin_edges[:-1], bin_edges, weights=heights)
         plt.show()
     return 1-(absolute_area/total_area)
+
+def box_plotter(x, y, step_size=100):
+
+    bin_edges = np.linspace(np.min(x), np.max(x), step_size + 1)
+    edge_location = []
+    for i in range(len(x)):
+        for j in range(step_size):
+            if bin_edges[j] <= x[i] <= bin_edges[j+1]:
+                edge_location.append(j)
+                break
+
+    heights = []
+    points = []
+    widths = []
+
+    for i in range(step_size):
+        samps = []
+        for j in range(len(y)):
+            if edge_location[j] == i:
+                samps.append(y[j])
+        height = np.max(samps) - np.min(samps)
+        heights.append(height)
+        base = bin_edges[i+1]-bin_edges[i]
+        points.append([np.min(samps), np.max(samps)])
+        widths.append(base)
+
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Rectangle
+    fig, ax = plt.subplots()
+    ax.scatter(x,y)
+    ax.add_patch(Rectangle((np.min(x), np.min(y)), width=np.max(x)-np.min(x),
+                 height=np.max(y)-np.min(y), linewidth=3, edgecolor='black', facecolor='black', fill=True, alpha=0.2))
+    for i in range(len(widths)):
+        ax.add_patch(Rectangle((bin_edges[i], points[i][0]), widths[i],
+                     heights[i], linewidth=3, edgecolor='r', facecolor='r', fill=True, alpha=0.5))

@@ -1,4 +1,4 @@
-using IntervalArithmetic, Plots, Distributions, ProbabilityBoundsAnalysis
+using IntervalArithmetic, Plots, Distributions, ProbabilityBoundsAnalysis, LaTeXStrings
 
 ## Define function. Interval box input.
 a = -4;
@@ -74,8 +74,8 @@ println("SA_x2: $SA2")
 
 theme(:dao, palette=:grays, legend=false)
 
-Plots.plot(bigBoxU2, fillcolor="red", fillalpha=0.2)
-Plots.plot!(outU2, fillcolor="black", xguidefontsize=20, yguidefontsize=20, xtickfontsize=18, ytickfontsize=18, bottom_margin=4Plots.mm)
-Plots.xlabel!(L"x_2")
+Plots.plot(bigBoxU2, fillcolor="black", fillalpha=0.2)
+Plots.plot!(outU1, fillcolor="red", xguidefontsize=20, yguidefontsize=20, xtickfontsize=18, ytickfontsize=18, bottom_margin=4Plots.mm)
+Plots.xlabel!(L"x_1")
 Plots.ylabel!(L"y")
-Plots.savefig("example_boxes_2.pdf")
+Plots.savefig("example_boxes_1.pdf")

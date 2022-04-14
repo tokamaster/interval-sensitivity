@@ -113,15 +113,15 @@ This paper attempts to present an interval-based global sensitivity analysis met
 Section 2 introduces some basic concepts in interval uncertainty propagation which are required to perform the analysis.
 In Section 3 it is explained how the sensitivity indices are calculated in the interval approach, and the
 pinching measure that can be calculated additionally.
-Lastly, Section 4 compares the performance of the interval-based method against Sobol' indices in two test cases
-(Ishigami function and a basic physics problem), followed by the conclusion in section 5.
+Lastly, Section 4 compares the performance of the interval-based method against Sobol' indices in two test cases for the
+Ishigami function, followed by the conclusion in section 5.
 
-\begin{enumerate}
-	\item Explain sensitivity analysis. [DONE]
-	\item Explain main approaches and their limitation. [DONE]
-	\item Explain epistemic uncertainty in engineering -slides- (we cannot afford those limitations) [DONE]
-	\item Explain structure of the paper [DONE]
-\end{enumerate}
+%\begin{enumerate}
+%	\item Explain sensitivity analysis. [DONE]
+%	\item Explain main approaches and their limitation. [DONE]
+%	\item Explain epistemic uncertainty in engineering -slides- (we cannot afford those limitations) [DONE]
+%	\item Explain structure of the paper [DONE]
+%\end{enumerate}
 
 \section{Interval Analysis}
 
@@ -147,34 +147,33 @@ the only required measures.
 Therefore, it can be used with black-box or sophisticated models that cannot be adapted to work with interval arithmetic (and therefore the uncertainty propagation
 has to be performed via sampling), or with models which already adopt interval arithmetic.
 
-\begin{enumerate}
-	\item Explain epistemic uncertainty can be modeled as intervals. [DONE]
-	\item Explain interval uncertainty can be propagated with: arithmetic, sampling [DONE]
-	\item In te case the analytical function(s) are available, interval arithmetic gets the rigorous calculation.
-	If the function(s) are not available, the propagation can be performed with sampling. [DONE]
-\end{enumerate}
+%\begin{enumerate}
+%	\item Explain epistemic uncertainty can be modeled as intervals. [DONE]
+%	\item Explain interval uncertainty can be propagated with: arithmetic, sampling [DONE]
+%	\item In te case the analytical function(s) are available, interval arithmetic gets the rigorous calculation.
+%	If the function(s) are not available, the propagation can be performed with sampling. [DONE]
+%\end{enumerate}
 
 \section{Interval-Based Sensitivity Index}
 
 The proposed sensitivity index captures the dependence of the model output on the inputs measuring the area described by these. %the input and output of the model function.
 Figure 1 serves as an illustrative example.
-It shows the scatterplots of the evaluation of a black-box function $y = f(x_1,x_2)$ with $x_1 \in [-5,5]$ and $x_2 \in [-5,5]$, with samples generated using
-Latin Hypercube sampling.
-As explained in [REF Helton Davis], scatterplot visualization is a straightforward qualitative method of inspecting dependencies in model functions.
+It shows the scatterplots of the evaluation of a black-box function $y = f(x_1,x_2)$ with $x_1,x_2 \in [-5,5]$, with samples generated using Latin Hypercube sampling.
+As explained in [REF Helton Davis], scatterplot visualization is a straightforward qualitative method of inspecting dependencies in a model.
 In this example it is possible to see how $y$ has a linear dependence with $x_1$ (Figure 1 (a)), but shows little or no dependence with $x_2$ (Figure 2 (b)).
 The objective is to turn this qualitative \textit{intuition} into a measurement.
 
 \begin{figure}
 	\centering
 	\begin{tabular}{@{}c@{}}
-	  \includegraphics[width=\linewidth]{figures/example_x1.pdf} \\[\abovecaptionskip]
+	  \includegraphics[width=\linewidth]{figures/example_x1_grid.pdf} \\[\abovecaptionskip]
 	  \small (a) Scatterplot of $y=f(x_1,x_2)$ and $x_1$.
 	\end{tabular}
 
 	\vspace{\floatsep}
 
 	\begin{tabular}{@{}c@{}}
-	  \includegraphics[width=\linewidth]{figures/example_x2.pdf} \\[\abovecaptionskip]
+	  \includegraphics[width=\linewidth]{figures/example_x2_grid.pdf} \\[\abovecaptionskip]
 	  \small (b) Scatterplot of $y=f(x_1,x_2)$ and $x_2$.
 	\end{tabular}
 
@@ -185,11 +184,12 @@ The objective is to turn this qualitative \textit{intuition} into a measurement.
 
 The dependence can be captured measuring the area described by the scatterplot, and comparing it to the box defined by $(\underline{y},\overline{y})\times(\underline{x_i},\overline{x_i})$,
 where $\underline{y},\overline{y}$ are the measured minimum and maximum of $y$, and $\underline{x_i},\overline{x_i}$ the minimum and maximum of the $i-th$ input parameter.
-If the measured area equals to the box area, then it can be said that the output has no dependence on that input (as occurs for $x_2$ in Figure X).
+If the measured area equals to the box area, then it can be said that the output has no dependence on that input.
 If the measured area has a value of 0, it means that the output is determined by that input.
-Then, any other degree of dependence will fall in between these two extreme cases (as in $x_1$ in Figure X).
-It is important to note that the measurement of the area will be an approximation of the actual area, being a consequence of the sampling method or the subintervalization
+Then, any other degree of dependence will fall in between these two extreme cases.
+It is important to note that the measurement of the output area will be an approximation of the actual area, being a consequence of the sampling method or the subintervalization
 if interval arithmetic is employed to solve the model functions.
+The approximation can be improved increasing the number of samples or subintervals, to the detriment of computational cost.
 
 The sensitivity index is calculated with the following formula:
 
@@ -208,17 +208,43 @@ The main drawback of the integration method is that a step size has to be define
 been studied yet.
 However, it is possible that since the method is similar to the trapezoidal rule, it should be feasible to place error bounds on the accuracy of the sensitivity index.
 
-%Show and explain figures with the sampling method
+Figure 2 shows how the areas would be calculated from Figure 1  with the sampling approach.
+The algorithm requires the output and input data, and the number of subintervals to divide it (20 were used in this example).
+Then the minimum and maximum output are found for each subinterval, and the area of the rectangle is calculated.
+The total measured area defined by the scatterplot would be the sum of all the rectangles.
 
-Figure 2 shows the 20 subintervals computed with interval arithmetic using the IntervalArithmetic package in Julia [REF].
+\begin{figure}
+	\centering
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_sampling_x1_grid.pdf} \\[\abovecaptionskip]
+	  \small (a) Measured scatterplot area (red) and box area (grey)\\
+	  of $y=f(x_1,x_2)$ and $x_1$.
+	\end{tabular}
+
+	\vspace{\floatsep}
+
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_sampling_x2_grid.pdf} \\[\abovecaptionskip]
+	  \small (b) Measured scatterplot area (red) and box area (grey)\\
+	  of $y=f(x_1,x_2)$ and $x_2$.
+	\end{tabular}
+
+	\caption{Results of the evaluation of $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 1000 samples generated with Latin Hypercube and 20 subintervals.
+	The sensitivity index is calculated as in Equation 1, where the numerator is equal to the area coloured in red and the denominator
+	equal to the area coloured in grey.}
+	%Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}
+	\label{fig:myfig}
+\end{figure}
+
+Figure 3 shows the 20 subintervals computed with interval arithmetic using the IntervalArithmetic package in Julia [REF].
 Note that since the function $y = f(x_1,x_2)$ is a black-box function, technically it should not be feasible to have access to
-its analytical description, and therefore the interval arithmetic approach would not be possible.
-Therefore, it has been included as an example to show how the interval arithmetic approach would work.
+its analytical form, and therefore the interval arithmetic approach would not be possible.
+However, it has been included as an example to show how the interval arithmetic approach would work.
 
 The sensitivity indices for $x_1,x_2$ calculated with the sampling and arithmetic approaches are indicated in Table 1.
 Both approaches return the same ordering, indicating that $x_1$ is the dominant parameter.
-Note that the interval arithmetic approach captures that $x_2$ has no impact on the uncertainty of $y$ (it also can be seen in Figure 2, since the
-grey area equals to the red area), whilst the sampling approach is not that precise.
+Note that the interval arithmetic approach captures that $x_2$ has no impact on the uncertainty of $y$ (it also can be seen in Figure 3b, since the
+red area equals to the grey area, making $S_2 = 0$), whilst the sampling approach is not that precise.
 This is caused by the fact the sampling approach is an inner approximation method, and the greater the number of samples,
 the more accurate the sensitivity index is.
 
@@ -238,19 +264,21 @@ the more accurate the sensitivity index is.
 	\centering
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_boxes_1.pdf} \\[\abovecaptionskip]
-	  \small (a) Visualisation of the 20 subintervals of $y=f(x_1,x_2)$ and $x_1$.
+	  \small (a) Visualisation of the 20 subintervals\\
+	  of $y=f(x_1,x_2)$ and $x_1$.
 	\end{tabular}
 
 	\vspace{\floatsep}
 
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_boxes_2.pdf} \\[\abovecaptionskip]
-	  \small (b) Visualisation of the 20 subintervals of $y=f(x_1,x_2)$ and $x_2$.
+	  \small (b) Visualisation of the 20 subintervals\\
+	  of $y=f(x_1,x_2)$ and $x_2$.
 	\end{tabular}
 
 	\caption{Results of the evaluation of $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 20 subintervals and interval arithmetic.
-	The sensitivity index is calculated as in Equation 1, where the numerator is equal to the area coloured in grey and the denominator
-	equal to the area coloured in red.}
+	The sensitivity index is calculated as in Equation 1, where the numerator is equal to the area coloured in red and the denominator
+	equal to the area coloured in grey.}
 	%Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}
 	\label{fig:myfig}
 \end{figure}
@@ -261,20 +289,20 @@ One drawback of this method is that a single value for each input interval has t
 increase of computational cost).
 However, the interval-based sensitivity index retrieves all the \textit{pinching} information possible for the given number of subintervals; so not only the
 output dependence on the input is measured, but also how the input affects the output along its domain.
-Figure 3 shows how reducing uncertainty in $x_2$ entails no reduction on the uncertainty of $y$, whilst reducing the uncertainty on $x_1$ has different consequences on the
+Figure 4 shows how reducing uncertainty in $x_2$ entails no reduction on the uncertainty of $y$, whilst reducing the uncertainty on $x_1$ has different consequences on the
 uncertainty of $y$ depending on the value of $x_1$.
 For example, the maximum output uncertainty reduction is obtained pinching at $x_1 = 0$.
 
 %figures
 
-\begin{enumerate}
-	\item Introduce the area method (overview and illustrating example). [DONE]
-	\item Use example and extreme cases to illustrate (e.g. perfect dependence = index of 1 = no area, independence = index of 0 = all area) [DONE]
-	\item Show equation of the sensitivity index [DONE]
-	\item Explain how it does with arithmetic (subintervalisation) [DONE]
-	\item Explain how it does with sampling (integration similar to trapezoid rule) [DONE]
-	\item Explain pinching. [DONE]
-\end{enumerate}
+%\begin{enumerate}
+%	\item Introduce the area method (overview and illustrating example). [DONE]
+%	\item Use example and extreme cases to illustrate (e.g. perfect dependence = index of 1 = no area, independence = index of 0 = all area) [DONE]
+%	\item Show equation of the sensitivity index [DONE]
+%	\item Explain how it does with arithmetic (subintervalisation) [DONE]
+%	\item Explain how it does with sampling (integration similar to trapezoid rule) [DONE]
+%	\item Explain pinching. [DONE]
+%\end{enumerate}
 
 \section{Application}
 
