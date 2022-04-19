@@ -218,7 +218,7 @@ The total measured area defined by the scatterplot would be the sum of all the r
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_sampling_x1_grid.pdf} \\[\abovecaptionskip]
 	  \small (a) Measured scatterplot area (red) and box area (grey)\\
-	  of $y=f(x_1,x_2)$ and $x_1$.
+	  \small of $y=f(x_1,x_2)$ and $x_1$.
 	\end{tabular}
 
 	\vspace{\floatsep}
@@ -226,7 +226,7 @@ The total measured area defined by the scatterplot would be the sum of all the r
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_sampling_x2_grid.pdf} \\[\abovecaptionskip]
 	  \small (b) Measured scatterplot area (red) and box area (grey)\\
-	  of $y=f(x_1,x_2)$ and $x_2$.
+	  \small of $y=f(x_1,x_2)$ and $x_2$.
 	\end{tabular}
 
 	\caption{Results of the evaluation of $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 1000 samples generated with Latin Hypercube and 20 subintervals.
@@ -255,7 +255,7 @@ the more accurate the sensitivity index is.
 	\hline
 	Index & Sampling & Interval arithmetic \\ \hline
 	$S_1$ & 0.790    & 0.732               \\
-	$S_2$ & 0.197    & 0                   \\ \hline
+	$S_2$ & 0.197    & $\sim0$                   \\ \hline
 	\end{tabular}%
 \end{table}
 
@@ -264,7 +264,7 @@ the more accurate the sensitivity index is.
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_boxes_1.pdf} \\[\abovecaptionskip]
 	  \small (a) Visualisation of the 20 subintervals\\
-	  of $y=f(x_1,x_2)$ and $x_1$.
+	  \small of $y=f(x_1,x_2)$ and $x_1$.
 	\end{tabular}
 
 	\vspace{\floatsep}
@@ -272,7 +272,7 @@ the more accurate the sensitivity index is.
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_boxes_2.pdf} \\[\abovecaptionskip]
 	  \small (b) Visualisation of the 20 subintervals\\
-	  of $y=f(x_1,x_2)$ and $x_2$.
+	  \small of $y=f(x_1,x_2)$ and $x_2$.
 	\end{tabular}
 
 	\caption{Results of the evaluation of $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 20 subintervals and interval arithmetic.
@@ -287,12 +287,30 @@ The \textit{pinching} sensitivity analysis calculates the reduction on the outpu
 One drawback of this method is that a single value for each input interval has to be chosen (or several values within the interval, with the consequent
 increase of computational cost).
 However, the interval-based sensitivity index retrieves all the \textit{pinching} information possible for the given number of subintervals; so not only the
-output dependence on the input is measured, but also how the input affects the output along its domain.
+output dependence on the input is measured, but also how the input affects the output across its domain.
 Figure 4 shows how reducing uncertainty in $x_2$ entails no reduction on the uncertainty of $y$, whilst reducing the uncertainty on $x_1$ has different consequences on the
 uncertainty of $y$ depending on the value of $x_1$.
 For example, the maximum output uncertainty reduction is obtained pinching at $x_1 = 0$.
 
-%figures
+\begin{figure}
+	\centering
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_pinching_1.pdf} \\[\abovecaptionskip]
+	  \small (a) Output width of $y$ across $x_1$.
+	\end{tabular}
+
+	\vspace{\floatsep}
+
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/example_pinching_2.pdf} \\[\abovecaptionskip]
+	  \small (a) Output width of $y$ across $x_2$.
+	\end{tabular}
+
+	\caption{Output width of $y=f(x_1,x_2)$ across the domain of $x_1$ and $x_2$. This method
+	calculates the output uncertainty when reducing the input parameter uncertainty to a subinterval or
+	point value.}
+
+\end{figure}
 
 %\begin{enumerate}
 %	\item Introduce the area method (overview and illustrating example). [DONE]
@@ -321,9 +339,35 @@ over $[-\pi,\pi]$.
 
 Since the analytical formula of the function is known, the interval-based sensitivity analysis can be performed with interval
 arithmetic.
-Figure 4 shows the results of the interval analysis of the Ishigami function with 100 subintervals for $x_1$, $x_2$, and $x_3$, with their corresponding sensitivity
+Figure 5 shows the results of the interval analysis of the Ishigami function with 100 subintervals for $x_1$, $x_2$, and $x_3$, with their corresponding sensitivity
 indices indicated in Table 2, calculated following the methodology presented in Section 3.
 According to the interval-based method, the Ishigami function has the highest dependence with $x_3$, followed by $x_1$.
+
+\begin{figure}[!h]
+	\centering
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/ishigami_1.pdf} \\[\abovecaptionskip]
+	  \small (a) Intervalisation of the Ishigami function\\
+	  \small and $x_1$ using 100 subintervals.
+	\end{tabular}
+
+	\vspace{\floatsep}
+
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/ishigami_2.pdf} \\[\abovecaptionskip]
+	  \small (b) Intervalisation of the Ishigami function\\
+	  \small and $x_2$ using 100 subintervals.
+	\end{tabular}
+
+	\begin{tabular}{@{}c@{}}
+		\includegraphics[width=\linewidth]{figures/ishigami_3.pdf} \\[\abovecaptionskip]
+		\small (c) Intervalisation of the Ishigami function\\
+		\small and $x_3$ using 100 subintervals.
+	  \end{tabular}
+
+	\caption{Results of the evaluation of the Ishigami function with $x_1,x_2,x_3 \in [-\pi,\pi]$ with interval arithmetic using 100 subintervals.
+	}
+\end{figure}
 
 \begin{table}[!h]
 	\centering
@@ -338,52 +382,54 @@ According to the interval-based method, the Ishigami function has the highest de
 	\end{tabular}%
 \end{table}
 
+In addition to the sensitivity indices, the interval-based approach also provides all the information of the \textit{pinching} analysis.
+Figure 6 shows the uncertainty on the Ishigami output when pinching $x_1$, $x_2$, and $x_3$.
+The maximum reduction on the Ishigami uncertainty is achieved when $x_1$ is fixed to $-\pi$, $0$, or $pi$.
+If pinching any of the three parameters to a point value were not possible, the second best strategy to maximise the output uncertainty
+reduction would be to pinch the $x_3$ interval from $[-\pi,\pi]$ to $[-1,1]$, as Figure 6 (c) suggests.
+Lastly, pinching $x_2$ entails almost the same uncertainty reduction, and the smallest of the three parameters, across its entire domain.
+
 \begin{figure}[!h]
 	\centering
 	\begin{tabular}{@{}c@{}}
-	  \includegraphics[width=\linewidth]{figures/ishigami_x1.pdf} \\[\abovecaptionskip]
-	  \small (a) Intervalisation of the Ishigami function\\
-	  and $x_1$ using 100 subintervals.
+	  \includegraphics[width=\linewidth]{applications/ishigami_pinching_1.pdf} \\[\abovecaptionskip]
+	  \small (a) Output width of the Ishigami function\\
+	  \small across $x_1$.
 	\end{tabular}
 
 	\vspace{\floatsep}
 
 	\begin{tabular}{@{}c@{}}
-	  \includegraphics[width=\linewidth]{figures/ishigami_x2.pdf} \\[\abovecaptionskip]
-	  \small (b) Intervalisation of the Ishigami function\\
-	and $x_2$ using 100 subintervals.
+	  \includegraphics[width=\linewidth]{applications/ishigami_pinching_2.pdf} \\[\abovecaptionskip]
+	  \small (b) Output width of the Ishigami function\\
+	  \small across $x_2$.
 	\end{tabular}
 
 	\begin{tabular}{@{}c@{}}
-		\includegraphics[width=\linewidth]{figures/ishigami_x3.pdf} \\[\abovecaptionskip]
-		\small (c) Intervalisation of the Ishigami function\\
-		and $x_3$ using 100 subintervals.
+		\includegraphics[width=\linewidth]{applications/ishigami_pinching_3.pdf} \\[\abovecaptionskip]
+		\small (c) Output width of the Ishigami function\\
+		\small across $x_3$.
 	  \end{tabular}
 
-	\caption{Results of the evaluation of the Ishigami function with $x_1,x_2,x_3 \in [-\pi,-pi]$ using 100 subintervals and interval arithmetic.
+	\caption{Output width of the Ishigami function across the domain of $x_1$, $x_2$, and $x_3$.
 	}
 \end{figure}
-
-In addition to the sensitivity indices, the interval-based approach also gives all the information of the
-\textit{pinching} analysis.
-Figure X shows blablabla.
-An hypothetical reduction of the uncertainty on blablabla would reduce the Ishigami uncertainty blabla.
 
 The analytical description for the variance terms used to calculate the Sobol' indices of the Ishigami function are known when the input variables
 follow an uniform distribution; therefore the \textit{true} total and first order Sobol' indices can be calculated.
 Table 3 contains the analytical Sobol' indices of the Ishigami function.
 Analytically, the variance of $x_1$ is the greatest contributor to the variance of the Ishigami function, and $x_3$ has effect on the Ishigami
-only when interacting with $x_1$ (i.e. its first order index is equal to zero but not its total).
+only when interacting with $x_1$.
 
 \begin{table}[!h]
 	\centering
-	\caption{Analytical total and first order Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following an uniform distribution in $[-\pi,\pi]$.}
+	\caption{Analytical first order and total Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following an uniform distribution in $[-\pi,\pi]$.}
 	\begin{tabular}{ccc}
 	\hline
-	Index & Total & First order \\ \hline
-	$S_1$ & 0.711 & 0.400 \\
+	Index & First order & Total\\ \hline
+	$S_1$ & 0.400 & 0.711 \\
 	$S_2$ & 0.288 & 0.288 \\
-	$S_3$ & 0.311 & 0.0 \\ \hline
+	$S_3$ & 0.0 & 0.311 \\ \hline
 	\end{tabular}%
 \end{table}
 
@@ -394,55 +440,55 @@ To calculate the Sobol' indices for the triangular case, 2048 samples were gener
 sequence optimised for calculating the indices [REF SALib].
 Table 4 shows the results of the analysis.
 The results suggest that, in this case, the variance of $x_2$ is the greatest contributor to the variance of the Ishigami.
-Note that the uncertainties about the indices have been omitted since these were negligible, and had no impact on the final parameter ranking.
+Note that the uncertainties on the indices have been omitted since these were negligible, and had no impact on the final parameter ranking.
 
 \begin{table}[!h]
 	\centering
-	\caption{Total and first order Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following a triangular distribution in $[-\pi,\pi]$
+	\caption{First order and total Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following a triangular distribution in $[-\pi,\pi]$
 	with mode in $0$.}
 	\begin{tabular}{ccc}
 	\hline
-	Index & Total & First order \\ \hline
-	$S_1$ & 0.409 & 0.254 \\
-	$S_2$ & 0.591 & 0.591 \\
-	$S_3$ & 0.158 & $\sim0$ \\ \hline
+	Index & First order & Total \\ \hline
+	$S_1$ & 0.254 & 0.409\\
+	$S_2$ & 0.591 & 0.591\\
+	$S_3$ & $\sim0$ & 0.158\\ \hline
 	\end{tabular}%
 \end{table}
 
-\begin{enumerate}
-	\item Explain Ishigami function [DONE]
-	\item Perform IBGSA [DONE]
-	\item Perform Sobol with uniforms[DONE]
-	\item Perform Sobol with triangular [DONE]
-	\item Show pinching.
-\end{enumerate}
+%\begin{enumerate}
+%	\item Explain Ishigami function [DONE]
+%	\item Perform IBGSA [DONE]
+%	\item Perform Sobol with uniforms[DONE]
+%	\item Perform Sobol with triangular [DONE]
+%	\item Show pinching. [DONE]
+%\end{enumerate}
 
 \section{Discussion}
 
-\begin{enumerate}
-	\item Explain results of interval
-	\item discuss what happens with sobol (variance based)
-	\item compare methods (Sobol says which to reduce but does not say how to reduce)
-	\item One could argue both methods are answering two different questions (dependence vs variance), which is true.
-	The objective of this paper is to introduce a sensitivity analysis method with minimum amount of assumptions and reiterate
-	that variance-based methods could return misleading results when the variance is not a reliable statistic.
-	This is the case of scenarios under epistemic uncertainty.
-\end{enumerate}
+%\begin{enumerate}
+%	\item Explain results of interval
+%	\item discuss what happens with sobol (variance based)
+%	\item compare methods (Sobol says which to reduce but does not say how to reduce)
+%	\item One could argue both methods are answering two different questions (dependence vs variance), which is true.
+%	The objective of this paper is to introduce a sensitivity analysis method with minimum amount of assumptions and reiterate
+%	that variance-based methods could return misleading results when the variance is not a reliable statistic.
+%	This is the case of scenarios under epistemic uncertainty.
+%\end{enumerate}
 
-Factor priorisation in terms of variance reduction is a bit confusing.
-When designing stuff it is much straightforward to work with intervals rather than variances.
-"For factor priorisation purposes then, the conclusion that is drawn from the analysis is to focus future research efforts
-on factor x1, since on average once fixed, factor x1 is expected to reduce the variance of Y by the largest amount".
-weird.
+%Factor priorisation in terms of variance reduction is a bit confusing.
+%When designing stuff it is much straightforward to work with intervals rather than variances.
+%"For factor priorisation purposes then, the conclusion that is drawn from the analysis is to focus future research efforts
+%on factor x1, since on average once fixed, factor x1 is expected to reduce the variance of Y by the largest amount".
+%weird.
 
 \section{Conclusion}
 
-\begin{enumerate}
-	\item Brief recap (we show a SA method blabla..)
-	\item Method for epistemic uncertainty (no assumptions)
-	\item This method can be used with interval arithmetic or sampling (blackbox)
-	\item Compare its performance with Sobol on the Ishigami (sobol good for interaction)
-\end{enumerate}
+%\begin{enumerate}
+%	\item Brief recap (we show a SA method blabla..)
+%	\item Method for epistemic uncertainty (no assumptions)
+%	\item This method can be used with interval arithmetic or sampling (blackbox)
+%	\item Compare its performance with Sobol on the Ishigami (sobol good for interaction)
+%\end{enumerate}
 
 \begin{acknowledgement}
 	This research was funded by the EPSRC and ESRC CDT in Risk and Uncertainty (EP/L015927/1), established within
