@@ -1,9 +1,10 @@
-using IntervalArithmetic, Plots
+using IntervalArithmetic, Plots, LaTeXStrings
 
 
 ## Define function. Interval box input.
-a = 5; b = 0.1
-f(x :: IntervalBox) = sin(x.v[1]) + a*sin(x.v[2])^2 + b * x.v[3]^4 * sin(x.v[1])
+a = 5;
+b = 0.1;
+f(x::IntervalBox) = sin(x.v[1]) + a * sin(x.v[2])^2 + b * x.v[3]^4 * sin(x.v[1])
 
 
 ## Input variables
@@ -15,7 +16,7 @@ x3 = interval(-pi, pi)
 X = x1 × x2 × x3
 
 # Sub-intervalise interval box
-Nsub = 300;
+Nsub = 100;
 xs = mince(X, Nsub)
 
 # Eval sub-intervals
@@ -52,7 +53,7 @@ bigBoxU1 = hull(x1Unique) × hull(outsUnion1)    # Compute bounding box
 
 bigArea1 = diam(bigBoxU1.v[1]) * diam(bigBoxU1.v[2])    # Area of bounding box
 areaU1 = sum([diam(x.v[1]) * diam(x.v[2]) for x in outU1])  # Area of interval shape
-SA1 = 1 - areaU1/bigArea1       # Sensativity index
+SA1 = 1 - areaU1 / bigArea1       # Sensativity index
 
 ###### Compute x2 index ########
 
@@ -71,7 +72,7 @@ bigBoxU2 = hull(x2Unique) × hull(outsUnion2)
 
 bigArea2 = diam(bigBoxU2.v[1]) * diam(bigBoxU2.v[2])
 areaU2 = sum([diam(x.v[1]) * diam(x.v[2]) for x in outU2])
-SA2 = 1 - areaU2/bigArea2
+SA2 = 1 - areaU2 / bigArea2
 
 #####   Compute x3 index    ######
 
@@ -89,7 +90,7 @@ bigBoxU3 = hull(x3Unique) × hull(outsUnion3)
 
 bigArea3 = diam(bigBoxU3.v[1]) * diam(bigBoxU3.v[2])
 areaU3 = sum([diam(x.v[1]) * diam(x.v[2]) for x in outU3])
-SA3 = 1 - areaU3/bigArea3
+SA3 = 1 - areaU3 / bigArea3
 
 #plot(outU1)
 #plot!(outU2)
@@ -99,3 +100,11 @@ SA3 = 1 - areaU3/bigArea3
 println("SA_x1: $SA1")
 println("SA_x2: $SA2")
 println("SA_x3: $SA3")
+
+theme(:dao, palette=:grays, legend=false)
+
+Plots.plot(bigBoxU3, fillcolor="black", fillalpha=0.2)
+Plots.plot!(outU3, fillcolor="red", xguidefontsize=20, yguidefontsize=20, xtickfontsize=18, ytickfontsize=18, bottom_margin=4Plots.mm)
+Plots.xlabel!(L"x_3")
+Plots.ylabel!(L"y")
+Plots.savefig("ishi_3.pdf")

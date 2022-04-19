@@ -7,45 +7,45 @@ Warning--no journal in JRC122132
 Warning--no volume for JRC122132
 Warning--page numbers missing in JRC122132
 Warning--page numbers missing in wagg2020digital
-You've used 7 entries,
+You've used 12 entries,
             2861 wiz_defined-function locations,
-            660 strings with 6615 characters,
-and the built_in function-call counts, 6020 in all, are:
-= -- 431
-> -- 621
+            690 strings with 7595 characters,
+and the built_in function-call counts, 9934 in all, are:
+= -- 724
+> -- 993
 < -- 1
-+ -- 198
-- -- 204
-* -- 637
-:= -- 1139
-add.period$ -- 21
-call.type$ -- 7
-change.case$ -- 65
-chr.to.int$ -- 7
-cite$ -- 11
-duplicate$ -- 121
-empty$ -- 279
-format.name$ -- 228
-if$ -- 1088
++ -- 314
+- -- 328
+* -- 1029
+:= -- 1873
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 106
+chr.to.int$ -- 12
+cite$ -- 16
+duplicate$ -- 210
+empty$ -- 479
+format.name$ -- 372
+if$ -- 1802
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 8
-newline$ -- 38
-num.names$ -- 70
-pop$ -- 48
+missing$ -- 15
+newline$ -- 63
+num.names$ -- 120
+pop$ -- 84
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 181
 quote$ -- 0
-skip$ -- 128
+skip$ -- 225
 stack$ -- 0
-substring$ -- 235
-swap$ -- 39
+substring$ -- 397
+swap$ -- 66
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 130
+type$ -- 210
 warning$ -- 4
-while$ -- 57
+while$ -- 100
 width$ -- 0
-write$ -- 94
+write$ -- 159
 (There were 4 warnings)

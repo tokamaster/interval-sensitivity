@@ -14,10 +14,11 @@ def ishigami(x, a=5, b=0.1):
     return np.sin(x[0])+a*np.sin(x[1])**2+b*np.sin(x[0])*x[2]**4
     #return x[0]+a*x[1]+b*x[2]
 
+
 lower_bounds = [-pi, -pi, -pi]
 upper_bounds = [pi, pi, pi]
 
-n_samples = 100000
+n_samples = 1024
 samples = lhs(len(lower_bounds), samples=n_samples)
 
 #Latin Hypercube Sampling of means
@@ -39,5 +40,4 @@ x3 = area_calculator(samples[:, 2], results, plot=False, step_size=50)
 print("x1 area:", x1)
 print("x2 area:", x2)
 print("x3 area:", x3)
-
 

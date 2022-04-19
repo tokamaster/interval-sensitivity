@@ -1,9 +1,45 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citeauthoryear{Ferson and Tucker}{Ferson and
+  Tucker}{2006}]{ferson2006sensitivity}
+Ferson, S. and W.~T. Tucker (2006).
+\newblock {\em Sensitivity in risk analyses with uncertain numbers}.
+\newblock Citeseer.
+
+\bibitem[\protect\citeauthoryear{Gray, Wimbush, de~Angelis, Hristov, Calleja,
+  Miralles-Dolz, and Rocchetta}{Gray et~al.}{2022}]{gray2022inference}
+Gray, A., A.~Wimbush, M.~de~Angelis, P.~O. Hristov, D.~Calleja,
+  E.~Miralles-Dolz, and R.~Rocchetta (2022).
+\newblock From inference to design: A comprehensive framework for uncertainty
+  quantification in engineering with limited information.
+\newblock {\em Mechanical Systems and Signal Processing\/}~{\em 165}, 108210.
+
+\bibitem[\protect\citeauthoryear{Helton and Davis}{Helton and
+  Davis}{2003}]{helton2003latin}
+Helton, J.~C. and F.~J. Davis (2003).
+\newblock Latin hypercube sampling and the propagation of uncertainty in
+  analyses of complex systems.
+\newblock {\em Reliability Engineering \& System Safety\/}~{\em 81\/}(1),
+  23--69.
+
+\bibitem[\protect\citeauthoryear{Helton, Johnson, Oberkampf, and
+  Sallaberry}{Helton et~al.}{2010}]{helton2010representation}
+Helton, J.~C., J.~D. Johnson, W.~L. Oberkampf, and C.~J. Sallaberry (2010).
+\newblock Representation of analysis results involving aleatory and epistemic
+  uncertainty.
+\newblock {\em International Journal of General Systems\/}~{\em 39\/}(6),
+  605--646.
+
 \bibitem[\protect\citeauthoryear{I, G, T, and R}{I et~al.}{2020}]{JRC122132}
 I, A., L.~G, M.~T, and R.~R (2020).
 \newblock Uncertainty and sensitivity analysis for policy decision making.
 \newblock ~(Publications Office of the European Union).
+
+\bibitem[\protect\citeauthoryear{Moore, Kearfott, and Cloud}{Moore
+  et~al.}{2009}]{moore2009introduction}
+Moore, R.~E., R.~B. Kearfott, and M.~J. Cloud (2009).
+\newblock {\em Introduction to interval analysis}.
+\newblock SIAM.
 
 \bibitem[\protect\citeauthoryear{Razavi, Jakeman, Saltelli, Prieur, Iooss,
   Borgonovo, Plischke, Piano, Iwanaga, Becker, et~al.}{Razavi
