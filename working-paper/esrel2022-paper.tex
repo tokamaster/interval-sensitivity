@@ -319,11 +319,11 @@ The Ishigami function can be written as
 where the constants are set to $a=5$ and $b=0.1$, and the input variables $x_1,x_2,x_3$ are independent and uniformly distributed
 over $[-\pi,\pi]$.
 
-Since the analytical description of the function is known, the interval-based sensitivity analysis can be performed with interval
+Since the analytical formula of the function is known, the interval-based sensitivity analysis can be performed with interval
 arithmetic.
-Figure X shows the measured and box areas with 100 subintervals for $x_1$, $x_2$, and $x_3$, and the corresponding sensitivity
-indices are indicated in Table X.
-According to the interval-based method, the Ishigami function shows the highest dependence with $x_3$, followed by $x_1$.
+Figure 4 shows the results of the interval analysis of the Ishigami function with 100 subintervals for $x_1$, $x_2$, and $x_3$, with their corresponding sensitivity
+indices indicated in Table 2, calculated following the methodology presented in Section 3.
+According to the interval-based method, the Ishigami function has the highest dependence with $x_3$, followed by $x_1$.
 
 \begin{table}[!h]
 	\centering
@@ -338,26 +338,63 @@ According to the interval-based method, the Ishigami function shows the highest 
 	\end{tabular}%
 \end{table}
 
-%Figures
+\begin{figure}[!h]
+	\centering
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/ishigami_x1.pdf} \\[\abovecaptionskip]
+	  \small (a) Intervalisation of the Ishigami function\\
+	  and $x_1$ using 100 subintervals.
+	\end{tabular}
 
-Explain pinching
+	\vspace{\floatsep}
 
+	\begin{tabular}{@{}c@{}}
+	  \includegraphics[width=\linewidth]{figures/ishigami_x2.pdf} \\[\abovecaptionskip]
+	  \small (b) Intervalisation of the Ishigami function\\
+	and $x_2$ using 100 subintervals.
+	\end{tabular}
 
-The Sobol' indices of the Ishigami function can be derived analytically, so it is possible to obtain the true input ranking based on the
-variance [REF].
+	\begin{tabular}{@{}c@{}}
+		\includegraphics[width=\linewidth]{figures/ishigami_x3.pdf} \\[\abovecaptionskip]
+		\small (c) Intervalisation of the Ishigami function\\
+		and $x_3$ using 100 subintervals.
+	  \end{tabular}
 
+	\caption{Results of the evaluation of the Ishigami function with $x_1,x_2,x_3 \in [-\pi,-pi]$ using 100 subintervals and interval arithmetic.
+	}
+\end{figure}
 
-True sobol: total: 0.711, 0.288, 0.311; first: 0.400, 0.288, 0.0
+In addition to the sensitivity indices, the interval-based approach also gives all the information of the
+\textit{pinching} analysis.
+Figure X shows blablabla.
+An hypothetical reduction of the uncertainty on blablabla would reduce the Ishigami uncertainty blabla.
+
+The analytical description for the variance terms used to calculate the Sobol' indices of the Ishigami function are known when the input variables
+follow an uniform distribution; therefore the \textit{true} total and first order Sobol' indices can be calculated.
+Table 3 contains the analytical Sobol' indices of the Ishigami function.
+Analytically, the variance of $x_1$ is the greatest contributor to the variance of the Ishigami function, and $x_3$ has effect on the Ishigami
+only when interacting with $x_1$ (i.e. its first order index is equal to zero but not its total).
+
+\begin{table}[!h]
+	\centering
+	\caption{Analytical total and first order Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following an uniform distribution in $[-\pi,\pi]$.}
+	\begin{tabular}{ccc}
+	\hline
+	Index & Total & First order \\ \hline
+	$S_1$ & 0.711 & 0.400 \\
+	$S_2$ & 0.288 & 0.288 \\
+	$S_3$ & 0.311 & 0.0 \\ \hline
+	\end{tabular}%
+\end{table}
 
 A second case for the Ishigami function has been included where the input variables follow a triangular distribution in $[-\pi,\pi]$ with mode in $0$
 instead of an uniform distribution; this case will support the issue when the distribution functions of the input variables are not totally known, showing
 that the Sobol' indices could be sensible to these assumptions.
 To calculate the Sobol' indices for the triangular case, 2048 samples were generated using the Saltelli sampling method, which is an extension of the Sobol'
 sequence optimised for calculating the indices [REF SALib].
-Table X shows the results of the analysis.
-The total indices indicate that in this case the variance of $x_2$ is the greatest contributor to the variance of $f$, whilst the first order indices still indicate
-that there are some interaction effects between $x_1$ and $x_3$.
-Note that the uncertainties on the indices have been omitted since these were negligible, and had no impact on the final parameter ranking.
+Table 4 shows the results of the analysis.
+The results suggest that, in this case, the variance of $x_2$ is the greatest contributor to the variance of the Ishigami.
+Note that the uncertainties about the indices have been omitted since these were negligible, and had no impact on the final parameter ranking.
 
 \begin{table}[!h]
 	\centering
@@ -375,7 +412,7 @@ Note that the uncertainties on the indices have been omitted since these were ne
 \begin{enumerate}
 	\item Explain Ishigami function [DONE]
 	\item Perform IBGSA [DONE]
-	\item Perform Sobol with uniforms
+	\item Perform Sobol with uniforms[DONE]
 	\item Perform Sobol with triangular [DONE]
 	\item Show pinching.
 \end{enumerate}
@@ -385,12 +422,18 @@ Note that the uncertainties on the indices have been omitted since these were ne
 \begin{enumerate}
 	\item Explain results of interval
 	\item discuss what happens with sobol (variance based)
-	\item compare methods (Sobol does not say how to reduce)
+	\item compare methods (Sobol says which to reduce but does not say how to reduce)
 	\item One could argue both methods are answering two different questions (dependence vs variance), which is true.
 	The objective of this paper is to introduce a sensitivity analysis method with minimum amount of assumptions and reiterate
 	that variance-based methods could return misleading results when the variance is not a reliable statistic.
 	This is the case of scenarios under epistemic uncertainty.
 \end{enumerate}
+
+Factor priorisation in terms of variance reduction is a bit confusing.
+When designing stuff it is much straightforward to work with intervals rather than variances.
+"For factor priorisation purposes then, the conclusion that is drawn from the analysis is to focus future research efforts
+on factor x1, since on average once fixed, factor x1 is expected to reduce the variance of Y by the largest amount".
+weird.
 
 \section{Conclusion}
 
