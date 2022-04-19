@@ -1,5 +1,17 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citeauthoryear{{Azzini}, {Listorti}, {Mara}, and
+  {Rosati}}{{Azzini} et~al.}{2020}]{JRC122132}
+{Azzini}, I., G.~{Listorti}, T.~{Mara}, and R.~{Rosati} (2020).
+\newblock Uncertainty and sensitivity analysis for policy decision making.
+\newblock ~(Publications Office of the European Union).
+
+\bibitem[\protect\citeauthoryear{Benet and Sanders}{Benet and
+  Sanders}{2020}]{benet2020juliaintervals}
+Benet, L. and D.~P. Sanders (2020).
+\newblock Juliaintervals/intervalarithmetic. jl.
+\newblock {\em Version 0.16\/}~{\em 1}, 2014--2019.
+
 \bibitem[\protect\citeauthoryear{Ferson and Tucker}{Ferson and
   Tucker}{2006}]{ferson2006sensitivity}
 Ferson, S. and W.~T. Tucker (2006).
@@ -30,10 +42,13 @@ Helton, J.~C., J.~D. Johnson, W.~L. Oberkampf, and C.~J. Sallaberry (2010).
 \newblock {\em International Journal of General Systems\/}~{\em 39\/}(6),
   605--646.
 
-\bibitem[\protect\citeauthoryear{I, G, T, and R}{I et~al.}{2020}]{JRC122132}
-I, A., L.~G, M.~T, and R.~R (2020).
-\newblock Uncertainty and sensitivity analysis for policy decision making.
-\newblock ~(Publications Office of the European Union).
+\bibitem[\protect\citeauthoryear{Ishigami and Homma}{Ishigami and
+  Homma}{1990}]{ishigami1990importance}
+Ishigami, T. and T.~Homma (1990).
+\newblock An importance quantification technique in uncertainty analysis for
+  computer models.
+\newblock In {\em [1990] Proceedings. First International Symposium on
+  Uncertainty Modeling and Analysis}, pp.\  398--403. IEEE.
 
 \bibitem[\protect\citeauthoryear{Moore, Kearfott, and Cloud}{Moore
   et~al.}{2009}]{moore2009introduction}
@@ -49,6 +64,11 @@ Razavi, S., A.~Jakeman, A.~Saltelli, C.~Prieur, B.~Iooss, E.~Borgonovo,
 \newblock The future of sensitivity analysis: An essential discipline for
   systems modeling and policy support.
 \newblock {\em Environmental Modelling \& Software\/}~{\em 137}, 104954.
+
+\bibitem[\protect\citeauthoryear{Saltelli}{Saltelli}{2002}]{saltelli2002making}
+Saltelli, A. (2002).
+\newblock Making best use of model evaluations to compute sensitivity indices.
+\newblock {\em Computer physics communications\/}~{\em 145\/}(2), 280--297.
 
 \bibitem[\protect\citeauthoryear{Saltelli, Annoni, Azzini, Campolongo, Ratto,
   and Tarantola}{Saltelli et~al.}{2010}]{saltelli2010variance}

@@ -101,12 +101,14 @@ For example, partial correlation coefficients assume model linearity, or monoton
 %maybe add GP and PCE criticism
 For these reasons, it is desirable to find a sensitivity analysis method that:
 
-\begin{enumerate}
-	\item Does not require knowing the analytical description of the model functions.
-	\item Does not require defining base values for any input parameter.
-	\item Does not require to assume the input parameters follow a precise probability distribution function.
-	\item It is independent of the model behavior.
-\end{enumerate}
+\begin{itemlist}
+
+	\item{}  Does not require knowing the analytical description of the model functions.
+	\item{}  Does not require defining base values for any input parameter.
+	\item{}  Does not require to assume that the input parameters follow a precise probability distribution function.
+	\item{}  Does not depend on the model behavior.
+
+\end{itemlist}
 
 This paper attempts to present an interval-based global sensitivity analysis method that fulfills these requirements.
 %mention that 2,3,4 are related to epistemic uncertainty?
@@ -163,7 +165,7 @@ As explained in \cite{helton2003latin}, scatterplot visualization is a straightf
 In this example it is possible to see how $y$ has a linear dependence with $x_1$ (Figure 1 (a)), but shows little or no dependence with $x_2$ (Figure 2 (b)).
 The objective is to turn this qualitative \textit{intuition} into a measurement.
 
-\begin{figure}
+\begin{figure}[!b]
 	\centering
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_x1_grid.pdf} \\[\abovecaptionskip]
@@ -186,7 +188,7 @@ The dependence can be captured measuring the area described by the scatterplot, 
 where $\underline{y},\overline{y}$ are the measured minimum and maximum of $y$, and $\underline{x_i},\overline{x_i}$ the minimum and maximum of the $i-th$ input parameter.
 If the measured area equals to the box area, then it can be said that the output has no dependence on that input.
 If the measured area has a value of 0, it means that the output is determined by that input.
-Then, any other degree of dependence will fall in between these two extreme cases.
+Then, any other degree of dependence will fall in-between these two extreme cases.
 It is important to note that the measurement of the output area will be an approximation of the actual area, being a consequence of the sampling method or the subintervalization
 if interval arithmetic is employed to solve the model functions.
 The approximation can be improved increasing the number of samples or subintervals, to the detriment of computational cost.
@@ -201,19 +203,19 @@ where $N$ is the total number of subintervals.
 Therefore, $S_i$ is a sensitivity index ranging from 0 (i.e. $y$ is independent of $x_i$) to 1 (i.e. $y$ is determined by $x_i$).
 
 The area can be calculated with two different methods depending on whether interval arithmetic was employed to calculate the functions or it was done though sampling.
-In the case of interval arithmetic the calculation is straightforward as the subintervals can be recycled and the boxes described by these can be easily computed.
+In the case of interval arithmetic the calculation is straightforward as the subintervals can be recycled and the rectangles described by these can be easily computed.
 On the other hand, if sampling methods were chosen, then the area can be calculated employing an integration method similar to the trapezoidal rule: a step size is defined to
-sweep through subintervals of $xi$ in the data, the minimum $\underline{y}$ and maximum $\overline{y}$ is returned for each subinterval, and the box is computed as usual.
+sweep through subintervals of $x_i$ in the data, the minimum $\underline{y}$ and maximum $\overline{y}$ are retrieved for each subinterval, and the rectangle area is computed as usual.
 The main drawback of the integration method is that a step size has to be defined manually, and the impact of this parameter on the proposed sensitivity analysis method has not
 been studied yet.
-However, it is possible that since the method is similar to the trapezoidal rule, it should be feasible to place error bounds on the accuracy of the sensitivity index.
+However, since the method is similar to the trapezoidal rule, it may be possible to place error bounds on the accuracy of the sensitivity index.
 
 Figure 2 shows how the areas would be calculated from Figure 1  with the sampling approach.
 The algorithm requires the output and input data, and the number of subintervals to divide it (20 were used in this example).
 Then the minimum and maximum output are found for each subinterval, and the area of the rectangle is calculated.
 The total measured area defined by the scatterplot would be the sum of all the rectangles.
 
-\begin{figure}
+\begin{figure}[!b]
 	\centering
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_sampling_x1_grid.pdf} \\[\abovecaptionskip]
@@ -230,36 +232,39 @@ The total measured area defined by the scatterplot would be the sum of all the r
 	\end{tabular}
 
 	\caption{Results of the evaluation of $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 1000 samples generated with Latin Hypercube and 20 subintervals.
-	The sensitivity index is calculated as in Equation 1, where the numerator is equal to the area coloured in red and the denominator
+	The sensitivity index is calculated as in Eq. (1), where the numerator is equal to the area coloured in red and the denominator
 	equal to the area coloured in grey.}
 	%Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}
 	\label{fig:myfig}
 \end{figure}
 
-Figure 3 shows the 20 subintervals computed with interval arithmetic using the IntervalArithmetic.jl Julia package[REF].
-Note that since the function $y = f(x_1,x_2)$ is a black-box function, technically it should not be feasible to have access to
-its analytical form, and therefore the interval arithmetic approach would not be possible.
+Figure 3 shows the 20 subintervals computed with interval arithmetic using the IntervalArithmetic.jl Julia package (\cite{benet2020juliaintervals}).
+Note that since the function $y = f(x_1,x_2)$ is a black-box function, the access to its analytical form is restricted, and therefore the
+interval arithmetic approach would not be possible.
 However, it has been included as an example to show how the interval arithmetic approach would work.
 
-The sensitivity indices for $x_1,x_2$ calculated with the sampling and arithmetic approaches are indicated in Table 1.
+The sensitivity indices for $x_1,x_2$ calculated with the sampling and arithmetic approaches are displayed in Table 1.
 Both approaches return the same ordering, indicating that $x_1$ is the dominant parameter.
 Note that the interval arithmetic approach captures that $x_2$ has no impact on the uncertainty of $y$ (it also can be seen in Figure 3b, since the
 red area equals to the grey area, making $S_2 = 0$), whilst the sampling approach is not that precise.
-This is caused by the fact the sampling approach is an inner approximation method, and the greater the number of samples,
+This is caused by the fact that the sampling approach is an inner approximation method, and the greater the number of samples,
 the more accurate the sensitivity index is.
 
 \begin{table}[!h]
-	\centering
-	\caption{Sensitivity indices for $x_1$ and $x_2$ with the sampling and arithmetic approaches.}
-	\begin{tabular}{ccc}
-	\hline
-	Index & Sampling & Interval arithmetic \\ \hline
-	$S_1$ & 0.790    & 0.732               \\
-	$S_2$ & 0.197    & $\sim0$                   \\ \hline
-	\end{tabular}%
+	\tbl{Sensitivity indices for $x_1$ and $x_2$ with sampling and arithmetic approaches.}
+	{\tabcolsep14pt
+	\begin{tabular}{@{}lll@{}}\toprule 
+	Index & Sampling & Interval Arithmetic\\
+\colrule
+
+	$S_1$ & 0.790 & 0.732\\
+	$S_2$ & 0.197 & $\sim0$\\
+\botrule
+	\end{tabular}}
+
 \end{table}
 
-\begin{figure}
+\begin{figure}[!b]
 	\centering
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_boxes_1.pdf} \\[\abovecaptionskip]
@@ -276,14 +281,14 @@ the more accurate the sensitivity index is.
 	\end{tabular}
 
 	\caption{Results of the evaluation of $y=f(x_1,x_2)$ with $x_1,x_2 \in [-5,-5]$ using 20 subintervals and interval arithmetic.
-	The sensitivity index is calculated as in Equation 1, where the numerator is equal to the area coloured in red and the denominator
+	The sensitivity index is calculated as in Eq. (1), where the numerator is equal to the area coloured in red and the denominator
 	equal to the area coloured in grey.}
 	%Function $y$ shows strong dependence with $x_1$, but little or no dependence with $x_2$.}
 	\label{fig:myfig}
 \end{figure}
 
-Lastly, an important by-product of the proposed sensitivity index is that its calculation also entails the so called \textit{pinching} method \cite{ferson2006sensitivity, gray2022inference}.
-The \textit{pinching} sensitivity analysis calculates the reduction on the output uncertainty when the uncertainty of an input is reduced from the interval to a single value.
+Lastly, an important by-product of the proposed sensitivity index is that its calculation also entails the so called \textit{pinching} method.
+The \textit{pinching} sensitivity analysis calculates the reduction on the output uncertainty when the uncertainty of an input is reduced from the interval to a single value (e.g., see \cite{ferson2006sensitivity, gray2022inference}).
 One drawback of this method is that a single value for each input interval has to be chosen (or several values within the interval, with the consequent
 increase of computational cost).
 However, the interval-based sensitivity index retrieves all the \textit{pinching} information possible for the given number of subintervals; so not only the
@@ -292,7 +297,7 @@ Figure 4 shows how reducing uncertainty in $x_2$ entails no reduction on the unc
 uncertainty of $y$ depending on the value of $x_1$.
 For example, the maximum output uncertainty reduction is obtained pinching at $x_1 = 0$.
 
-\begin{figure}
+\begin{figure}[!b]
 	\centering
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/example_pinching_1.pdf} \\[\abovecaptionskip]
@@ -325,7 +330,7 @@ For example, the maximum output uncertainty reduction is obtained pinching at $x
 
 To show the performance of the interval-based global sensitivity analysis method proposed, we compare
 its results in terms of parameter ranking with the Sobol' indices on the Ishigami function, which is common in the uncertainty quantification
-and sensitivity analysis community for its non-linearity, nonmonotonicity, and the interaction effects between $x_1$ and $x_3$ [REFerences].
+and sensitivity analysis community for its non-linearity, nonmonotonicity, and the interaction effects between $x_1$ and $x_3$ (\cite{ishigami1990importance}).
 
 The Ishigami function can be written as
 
@@ -343,7 +348,7 @@ Figure 5 shows the results of the interval analysis of the Ishigami function wit
 indices indicated in Table 2, calculated following the methodology presented in Section 3.
 According to the interval-based method, the Ishigami function has the highest dependence with $x_3$, followed by $x_1$.
 
-\begin{figure}[!h]
+\begin{figure}[!b]
 	\centering
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{figures/ishigami_1.pdf} \\[\abovecaptionskip]
@@ -370,16 +375,19 @@ According to the interval-based method, the Ishigami function has the highest de
 \end{figure}
 
 \begin{table}[!h]
-	\centering
-	\caption{Interval-based sensitivity indices of the Ishigami function with $x_1,x_2,x_3 \in [-\pi,\pi]$ using interval arithmetic
+	\tbl{Interval-based sensitivity indices of the Ishigami function with $x_1,x_2,x_3 \in [-\pi,\pi]$ using interval arithmetic
 	and 100 subintervals.}
-	\begin{tabular}{cc}
-	\hline
-	Index & Interval-based \\ \hline
+	{\tabcolsep14pt
+	\begin{tabular}{@{}ll@{}}\toprule
+	Index & Interval-Based\\
+\colrule
+
 	$S_1$ & 0.568 \\
 	$S_2$ & 0.181 \\
-	$S_3$ & 0.581 \\ \hline
-	\end{tabular}%
+	$S_3$ & 0.581 \\
+\botrule
+\end{tabular}}
+
 \end{table}
 
 In addition to the sensitivity indices, the interval-based approach also provides all the information of the \textit{pinching} analysis.
@@ -389,7 +397,7 @@ If pinching any of the three parameters to a point value were not possible, the 
 reduction would be to pinch the $x_3$ interval from $[-\pi,\pi]$ to $[-1,1]$, as Figure 6 (c) suggests.
 Lastly, pinching $x_2$ entails almost the same uncertainty reduction, and the smallest of the three parameters, across its entire domain.
 
-\begin{figure}[!h]
+\begin{figure}[!b]
 	\centering
 	\begin{tabular}{@{}c@{}}
 	  \includegraphics[width=\linewidth]{applications/ishigami_pinching_1.pdf} \\[\abovecaptionskip]
@@ -422,39 +430,44 @@ Analytically, the variance of $x_1$ is the greatest contributor to the variance 
 only when interacting with $x_1$.
 
 \begin{table}[!h]
-	\centering
-	\caption{Analytical first order and total Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following an uniform distribution in $[-\pi,\pi]$.}
-	\begin{tabular}{ccc}
-	\hline
-	Index & First order & Total\\ \hline
-	$S_1$ & 0.400 & 0.711 \\
-	$S_2$ & 0.288 & 0.288 \\
-	$S_3$ & 0.0 & 0.311 \\ \hline
-	\end{tabular}%
+	\tbl{Analytical first order and total Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following an uniform distribution in $[-\pi,\pi]$.}
+	{\tabcolsep14pt
+	\begin{tabular}{@{}lll@{}}\toprule
+	Index & First Order & Total\\
+\colrule
+
+	$S_1$ & 0.400 & 0.711\\
+	$S_2$ & 0.288 & 0.288\\
+	$S_3$ & 0.0 & 0.311\\
+\botrule
+	\end{tabular}}
+
 \end{table}
 
 A second case for the Ishigami function has been included where the input variables follow a triangular distribution in $[-\pi,\pi]$ with mode in $0$
 instead of an uniform distribution; this case will support the issue when the distribution functions of the input variables are not totally known, showing
 that the Sobol' indices could be sensible to these assumptions.
 To calculate the Sobol' indices for the triangular case, 2048 samples were generated using the Saltelli sampling method, which is an extension of the Sobol'
-sequence optimised for calculating the indices [REF SALib].
+sequence optimised for calculating the indices (\cite{saltelli2002making}).
 Table 4 shows the results of the analysis.
 The results suggest that, in this case, the variance of $x_2$ is the greatest contributor to the variance of the Ishigami.
 Note that the uncertainties on the indices have been omitted since these were negligible, and had no impact on the final parameter ranking.
 
 \begin{table}[!h]
-	\centering
-	\caption{First order and total Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following a triangular distribution in $[-\pi,\pi]$
+	\tbl{First order and total Sobol' indices of the Ishigami function with $x_1,x_2,x_3$ following a triangular distribution in $[-\pi,\pi]$
 	with mode in $0$.}
-	\begin{tabular}{ccc}
-	\hline
-	Index & First order & Total \\ \hline
+	{\tabcolsep14pt
+	\begin{tabular}{@{}lll@{}}\toprule
+	Index & First Order & Total\\
+\colrule
+
 	$S_1$ & 0.254 & 0.409\\
 	$S_2$ & 0.591 & 0.591\\
-	$S_3$ & $\sim0$ & 0.158\\ \hline
-	\end{tabular}%
-\end{table}
+	$S_3$ & $\sim0$ & 0.158\\
+\botrule
+	\end{tabular}}
 
+\end{table}
 %\begin{enumerate}
 %	\item Explain Ishigami function [DONE]
 %	\item Perform IBGSA [DONE]
@@ -474,7 +487,7 @@ Note that the uncertainties on the indices have been omitted since these were ne
 %	that variance-based methods could return misleading results when the variance is not a reliable statistic.
 %	This is the case of scenarios under epistemic uncertainty.
 %\end{enumerate}
-
+%Sobol good for interaction effects, IB lacks
 %Factor priorisation in terms of variance reduction is a bit confusing.
 %When designing stuff it is much straightforward to work with intervals rather than variances.
 %"For factor priorisation purposes then, the conclusion that is drawn from the analysis is to focus future research efforts
@@ -483,6 +496,13 @@ Note that the uncertainties on the indices have been omitted since these were ne
 
 \section{Conclusion}
 
+This paper introduces an interval-based method for performing global sensitivity analysis with interval analysis, performed either
+via sampling or with interval arithmetic.
+This method only requires expressing the input parameter uncertainty in the form of intervals, and therefore is particularly
+suited for cases under epistemic uncertainty.
+Also, calculating the interval-based sensitivity indices also provides
+A comparison with the Sobol' indices on the Ishigami function
+Sobol' indices can return contradictory results
 %\begin{enumerate}
 %	\item Brief recap (we show a SA method blabla..)
 %	\item Method for epistemic uncertainty (no assumptions)
