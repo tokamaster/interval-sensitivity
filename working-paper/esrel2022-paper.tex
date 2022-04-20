@@ -339,8 +339,7 @@ The Ishigami function can be written as
 	f(x_1,x_2,x_3) = \sin(x_1) + a\sin^2(x_2) + b\sin(x_1)x_3^4{,}
 \end{equation}
 
-where the constants are set to $a=5$ and $b=0.1$, and the input variables $x_1,x_2,x_3$ are independent and uniformly distributed
-over $[-\pi,\pi]$.
+where the constants are set to $a=5$ and $b=0.1$, and the input variables $x_1,x_2,x_3$ are in $[-\pi,\pi]$.
 
 Since the analytical formula of the function is known, the interval-based sensitivity analysis can be performed with interval
 arithmetic.
@@ -423,8 +422,8 @@ Lastly, pinching $x_2$ entails almost the same uncertainty reduction, and the sm
 	}
 \end{figure}
 
-The analytical description for the variance terms used to calculate the Sobol' indices of the Ishigami function are known when the input variables
-follow an uniform distribution; therefore the \textit{true} total and first order Sobol' indices can be calculated.
+When the inputs of the Ishigami function are independent and uniformly distributed in $[-\pi,\pi]$, the analytical description of the variance
+terms used to calculate the Sobol' indices are known; therefore the \textit{true} first order and total Sobol' indices can be calculated in this case.
 Table 3 contains the analytical Sobol' indices of the Ishigami function.
 Analytically, the variance of $x_1$ is the greatest contributor to the variance of the Ishigami function, and $x_3$ has effect on the Ishigami
 only when interacting with $x_1$.
@@ -478,6 +477,35 @@ Note that the uncertainties on the indices have been omitted since these were ne
 
 \section{Discussion}
 
+When the inputs of the Ishigami function are expressed as intervals, without assuming any distribution function,
+the interval-based sensitivity analysis claims that $x_3$ is the most important parameter, since the Ishigami function
+shows the highest dependence on it, followed by $x_1$.
+Sobol' indices where employed in two different cases of the Ishigami function: one where the input were assumed to follow
+an uniform distribution in $[-\pi,\pi]$, and in the second case inputs were assumed to follow a triangular distribution
+in $[-\pi,\pi]$ with mode at $0$.
+In the uniform case, $x_1$ was the first ranked parameter.
+On the other hand, in the triangular case, $x_2$ was the first ranked parameter.
+These results highlight the fact that variance-based methods for sensitivity analysis can return contradictory results
+when the input distribution function cannot be accurately chosen and the variance may not be a reliable statistic.
+
+Furthermore, in the context of digital twins it is important not only to perform parameter priorisation to explain to which
+parameter focus the uncertainty reduction, but also to explain how it would be most effective way to reduce output uncertainty.
+The results from the interval-based approach suggest that, if reducing input uncertainty to a point value were possible, pinching
+$x_1$ to $-\pi$, $0$, or $pi$ would entail the maximum output uncertainty reduction.
+If reducing to a point value were too restrictive (technically, economically...), reducing the uncertainty of $x_3$ from $[-\pi,pi]$
+to $[-1,1]$ would be best option.
+Generally, in variance-based methods the output uncertainty reduction is an average reduction of its variance when the variance of certain input
+is reduced some \% (e.g., see \cite{allaire2012variance}).
+In that regard, intervals are often easier to interpret than variances, and therefore the interval-based approach can offer
+an advantage.
+
+Lastly, variance-based methods provide information about interaction effects in the model (as it does with $x_1$ and $x_3$),
+and this is a feature that has not been explored with the interval-based approach.
+This feature is definitely useful for model diagnostic, and therefore Sobol' indices can be a useful complement to the
+interval-based approach.
+Generally, it is desirable to include as many sensitivity analysis methods as possible, as these answer to different questions
+and can help to better understand the problem under investigation.
+
 %\begin{enumerate}
 %	\item Explain results of interval
 %	\item discuss what happens with sobol (variance based)
@@ -496,28 +524,31 @@ Note that the uncertainties on the indices have been omitted since these were ne
 
 \section{Conclusion}
 
-This paper introduces an interval-based method for performing global sensitivity analysis with interval analysis, performed either
+This paper introduces an interval-based method for performing global sensitivity analysis with interval analysis, computed either
 via sampling or with interval arithmetic.
 This method only requires expressing the input parameter uncertainty in the form of intervals, and therefore is particularly
 suited for cases under epistemic uncertainty.
-Also, calculating the interval-based sensitivity indices also provides
-A comparison with the Sobol' indices on the Ishigami function
-Sobol' indices can return contradictory results
+Also, calculating the interval-based sensitivity indices also retrieves all the information of the pinching method,
+which measures the output uncertainty reduction when input uncertainty is reduced to a point value or subinterval.
+The interval-based approach is applied to the Ishigami function, and its results were compared with the Sobol' indices.
+When there is lack of knowledge about the probability distribution function of the inputs (i.e. epistemic uncertainty), variance
+based methods such as Sobol' indices may return contradictory results.
+This effect was illustrated using uniform and triangular distribution functions for the inputs of the Ishigami.
+In this respect, when the inputs are not precisely known the interval-based approach is more reliable since it returns the same
+parameter ranking for a given input domain.
+This is an initial work towards sensitivity analysis methods for epistemic uncertainty, and further work should be done to better
+understand the nature and limitations of the metric presented in this paper.
+
 %\begin{enumerate}
-%	\item Brief recap (we show a SA method blabla..)
-%	\item Method for epistemic uncertainty (no assumptions)
-%	\item This method can be used with interval arithmetic or sampling (blackbox)
-%	\item Compare its performance with Sobol on the Ishigami (sobol good for interaction)
+%	\item Brief recap (we show a SA method blabla..) [DONE]
+%	\item Method for epistemic uncertainty (no assumptions) [DONE]
+%	\item This method can be used with interval arithmetic or sampling (blackbox) [DONE]
+%	\item Compare its performance with Sobol on the Ishigami (sobol good for interaction) [DONE]
+%	\item Further work [DONE]
 %\end{enumerate}
 
 \begin{acknowledgement}
-	This research was funded by the EPSRC and ESRC CDT in Risk and Uncertainty (EP/L015927/1), established within
-	the Institute for Risk and Uncertainty at the University of Liverpool.
-	This work has been carried out within the framework of the EUROfusion Consortium, funded by the European Union
-	via the Euratom Research and Training Programme (Grant Agreement No 101052200 — EUROfusion). Views and opinions
-	expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or
-	the European Commission. Neither the European Union nor the European Commission can be held responsible for them.
-
+TBD
 \bibliographystyle{chicago}
 \bibliography{References}
 \end{acknowledgement}

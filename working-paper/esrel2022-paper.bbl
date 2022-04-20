@@ -1,5 +1,12 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citeauthoryear{Allaire and Willcox}{Allaire and
+  Willcox}{2012}]{allaire2012variance}
+Allaire, D.~L. and K.~E. Willcox (2012).
+\newblock A variance-based sensitivity index function for factor
+  prioritization.
+\newblock {\em Reliability Engineering \& System Safety\/}~{\em 107}, 107--114.
+
 \bibitem[\protect\citeauthoryear{{Azzini}, {Listorti}, {Mara}, and
   {Rosati}}{{Azzini} et~al.}{2020}]{JRC122132}
 {Azzini}, I., G.~{Listorti}, T.~{Mara}, and R.~{Rosati} (2020).
