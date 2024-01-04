@@ -1,0 +1,834 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.11)  30 MAY 2022 18:22
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.tex
+(/home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.tex
+LaTeX2e <2018-04-01> patch level 5
+(/home/enmidol/Documents/interval-sensitivity/second-draft/rps-esrel2022.cls
+
+LaTeX Warning: You have requested document class `rps-esrel2022',
+               but the document class provides `esrel2022'.
+
+Document Class: esrel2022 1999/09/09 v1.0 Standardized LaTeX document class
+\draftrule=\dimen102
+\tempdimen=\dimen103
+\tablewidth=\dimen104
+\normaltextheight=\dimen105
+\tempbox=\box26
+\tablewd=\dimen106
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+)
+\minute=\count80
+\hour=\count81
+\trimheight=\dimen109
+\trimwidth=\dimen110
+\typeheight=\dimen111
+\typewidth=\dimen112
+\tempdimen=\dimen113
+\tablewidth=\dimen114
+\normaltextheight=\dimen115
+\tempbox=\box27
+\tablewd=\dimen116
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+
+
+Warning: psfig.sty could be be found.
+
+
+Warning: epsfsafe.tex could not be found.
+
+
+epsfig.sty inputed...ok
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/epsfig.sty
+
+LaTeX Warning: You have requested document class `rps-esrel2022',
+               but the document class provides `epsfig'.
+
+Document Class: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen117
+\epsfysize=\dimen118
+)
+
+epsf.sty inputed...ok
+(/usr/local/texlive/2018/texmf-dist/tex/generic/epsf/epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read1
+\epsfframemargin=\dimen119
+\epsfframethickness=\dimen120
+\epsfrsize=\dimen121
+\epsftmp=\dimen122
+\epsftsize=\dimen123
+\epsfxsize=\dimen124
+\epsfysize=\dimen125
+\pspoints=\dimen126
+)
+\captionbox=\box28
+\c@figure=\count87
+\c@table=\count88
+\c@theorem=\count89
+\c@corollary=\count90
+\c@lemma=\count91
+\c@proposition=\count92
+\c@definition=\count93
+\c@example=\count94
+\c@remark=\count95
+\c@notation=\count96
+\c@question=\count97
+\c@prop=\count98
+\c@step=\count99
+\c@assumption=\count100
+\c@condition=\count101
+\c@conjecture=\count102
+\c@conventions=\count103
+\c@observation=\count104
+\bibindent=\dimen127
+\c@appendix=\count105
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
+\c@tracingmulticols=\count106
+
+
+Package multicol Warning: May not work with the twocolumn option on input line 141.
+
+\mult@box=\box29
+\multicol@leftmargin=\dimen128
+\c@unbalance=\count107
+\c@collectmore=\count108
+\doublecol@number=\count109
+\multicoltolerance=\count110
+\multicolpretolerance=\count111
+\full@width=\dimen129
+\page@free=\dimen130
+\premulticols=\dimen131
+\postmulticols=\dimen132
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box30
+\last@line=\box31
+\maxbalancingoverflow=\dimen133
+\mult@rightbox=\box32
+\mult@grightbox=\box33
+\mult@gfirstbox=\box34
+\mult@firstbox=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\c@columnbadness=\count112
+\c@finalcolumnbadness=\count113
+\last@try=\dimen134
+\multicolovershoot=\dimen135
+\multicolundershoot=\dimen136
+\mult@nat@firstbox=\box53
+\colbreak@box=\box54
+\mc@col@check@num=\count114
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count115
+\rotFPtop=\skip45
+\rotFPbot=\skip46
+\rot@float@box=\box55
+\rot@mess@toks=\toks15
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip47
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen137
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen138
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count116
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count117
+\leftroot@=\count118
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count119
+\DOTSCASE@=\count120
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+\big@size=\dimen139
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count121
+\c@MaxMatrixCols=\count122
+\dotsspace@=\muskip10
+\c@parentequation=\count123
+\dspbrk@lvl=\count124
+\tag@help=\toks18
+\row@=\count125
+\column@=\count126
+\maxfields@=\count127
+\andhelp@=\toks19
+\eqnshift@=\dimen140
+\alignsep@=\dimen141
+\tagshift@=\dimen142
+\tagwidth@=\dimen143
+\totwidth@=\dimen144
+\lineht@=\dimen145
+\@envbody=\toks20
+\multlinegap=\skip48
+\multlinetaggap=\skip49
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen146
+\Hy@linkcounter=\count128
+\Hy@pagecounter=\count129
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count130
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count131
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen147
+\Fld@menulength=\count132
+\Field@Width=\dimen148
+\Fld@charsize=\dimen149
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count133
+\c@Item=\count134
+\c@Hfootnote=\count135
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
+\Fld@listcount=\count136
+\c@bookmark@seq@number=\count137
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+)
+\Hy@SectionHShift=\skip50
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count138
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/changes/changes.sty
+Package: changes 2018/11/04 v3.0.0 changes package
+
+*** changes package 2018/11/04 v3.0.0 ***
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks22
+\XKV@tempa@toks=\toks23
+)
+\XKV@depth=\count139
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count140
+\calc@Bcount=\count141
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count142
+\calc@Cskip=\skip55
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count143
+\decimalpart=\count144
+)
+Package: xstring 2018/12/09 v1.81 String manipulations (CT)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdfcolmk.sty
+Package: pdfcolmk 2016/05/16 v1.3 Color support for pdfTeX via marks (HO)
+Package pdfcolmk Info: The color stack of pdfTeX >= 1.40 is used. Therefore
+(pdfcolmk)             this package is not necessary and not loaded.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box58
+\UL@hyphenbox=\box59
+\UL@skip=\skip56
+\UL@hook=\toks24
+\UL@height=\dimen152
+\UL@pe=\count145
+\UL@pixel=\dimen153
+\ULC@box=\box60
+Package: ulem 2012/05/18
+\ULdepth=\dimen154
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2018/11/22 v1.1.1 Todonotes source and documentation.
+Package: todonotes 2018/11/22
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks25
+\pgfutil@tempdima=\dimen155
+\pgfutil@tempdimb=\dimen156
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box61
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks28
+))
+\pgf@x=\dimen157
+\pgf@y=\dimen158
+\pgf@xa=\dimen159
+\pgf@ya=\dimen160
+\pgf@xb=\dimen161
+\pgf@yb=\dimen162
+\pgf@xc=\dimen163
+\pgf@yc=\dimen164
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count146
+\c@pgf@countb=\count147
+\c@pgf@countc=\count148
+\c@pgf@countd=\count149
+\t@pgf@toka=\toks29
+\t@pgf@tokb=\toks30
+\t@pgf@tokc=\toks31
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count150
+\pgfsyssoftpath@bigbuffer@items=\count151
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen165
+\pgfmath@count=\count152
+\pgfmath@box=\box62
+\pgfmath@toks=\toks32
+\pgfmath@stack@operand=\toks33
+\pgfmath@stack@operation=\toks34
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count153
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen166
+\pgf@picmaxx=\dimen167
+\pgf@picminy=\dimen168
+\pgf@picmaxy=\dimen169
+\pgf@pathminx=\dimen170
+\pgf@pathmaxx=\dimen171
+\pgf@pathminy=\dimen172
+\pgf@pathmaxy=\dimen173
+\pgf@xx=\dimen174
+\pgf@xy=\dimen175
+\pgf@yx=\dimen176
+\pgf@yy=\dimen177
+\pgf@zx=\dimen178
+\pgf@zy=\dimen179
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen180
+\pgf@path@lasty=\dimen181
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen182
+\pgf@shorten@start@additional=\dimen183
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box63
+\pgf@hbox=\box64
+\pgf@layerbox@main=\box65
+\pgf@picture@serial@count=\count154
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen184
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen185
+\pgf@pt@y=\dimen186
+\pgf@pt@temp=\dimen187
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen188
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen189
+\pgf@sys@shading@range@num=\count155
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box66
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box67
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen190
+\pgf@nodesepend=\dimen191
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen192
+\pgffor@skip=\dimen193
+\pgffor@stack=\toks35
+\pgffor@toks=\toks36
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count156
+\pgfplotmarksize=\dimen194
+)
+\tikz@lastx=\dimen195
+\tikz@lasty=\dimen196
+\tikz@lastxsaved=\dimen197
+\tikz@lastysaved=\dimen198
+\tikzleveldistance=\dimen199
+\tikzsiblingdistance=\dimen256
+\tikz@figbox=\box68
+\tikz@figbox@bg=\box69
+\tikz@tempbox=\box70
+\tikz@tempbox@bg=\box71
+\tikztreelevel=\count157
+\tikznumberofchildren=\count158
+\tikznumberofcurrentchild=\count159
+\tikz@fig@count=\count160
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count161
+\pgfmatrixcurrentcolumn=\count162
+\pgf@matrix@numberofcolumns=\count163
+)
+\tikz@expandcount=\count164
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v3.0.1a (rcs-revision 1.3)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.1a (rcs-revision 1.2)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v3.0.1a (rcs-revision 1.3)
+)))
+\c@@todonotes@numberoftodonotes=\count165
+)
+\c@Changes@AuthorCount=\count166
+\c@Changes@Author=\count167
+\c@Changes@addedCount=\count168
+\c@Changes@deletedCount=\count169
+\c@Changes@replacedCount=\count170
+\c@Changes@highlightCount=\count171
+\c@Changes@commentCount=\count172
+\c@authorcommentcount=\count173
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/truncate/truncate.sty
+Package: truncate 2001/08/20  ver 3.6
+\@Trunc@RestHyph=\toks37
+)
+\Changes@truncate@width=\skip57
+\Changes@summary@width=\skip58
+)
+\c@Changes@addedCountAG=\count174
+\c@Changes@deletedCountAG=\count175
+\c@Changes@replacedCountAG=\count176
+\c@Changes@highlightCountAG=\count177
+\c@Changes@commentCountAG=\count178
+ (/home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.aux
+
+LaTeX Warning: Label `fig:myfig' multiply defined.
+
+)
+\openout1 = `esrel2022-paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 44.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count179
+\scratchdimen=\dimen257
+\scratchbox=\box72
+\nofMPsegments=\count180
+\nofMParguments=\count181
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count182
+\MPscratchDim=\dimen258
+\MPnumerator=\count183
+\makeMPintoPDFobject=\count184
+\everyMPtoPDFconversion=\toks39
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\AtBeginShipoutBox=\box73
+
+
+Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
+(hyperref)                using 11in.
+
+Package hyperref Info: Link coloring OFF on input line 44.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count185
+)
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
+ (/home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.out) (/home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.out)
+\@outlinefile=\write4
+\openout4 = `esrel2022-paper.out'.
+
+ ABD: EveryShipout initializing macros
+
+Package hyperref Warning: bookmark level for unknown dt defaults to 0.
+
+
+Package hyperref Warning: bookmark level for unknown authrid defaults to 0.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 113.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+ [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+<figures/example_x1_grid.pdf, id=87, 544.43402pt x 399.894pt>
+File: figures/example_x1_grid.pdf Graphic file (type pdf)
+<use figures/example_x1_grid.pdf>
+Package pdftex.def Info: figures/example_x1_grid.pdf  used on input line 187.
+(pdftex.def)             Requested size: 187.21962pt x 137.51202pt.
+<figures/example_x2_grid.pdf, id=88, 544.43402pt x 399.894pt>
+File: figures/example_x2_grid.pdf Graphic file (type pdf)
+<use figures/example_x2_grid.pdf>
+Package pdftex.def Info: figures/example_x2_grid.pdf  used on input line 192.
+(pdftex.def)             Requested size: 187.21962pt x 137.51202pt.
+ [2]
+<figures/example_sampling_x1_grid.pdf, id=110, 544.43402pt x 399.894pt>
+File: figures/example_sampling_x1_grid.pdf Graphic file (type pdf)
+<use figures/example_sampling_x1_grid.pdf>
+Package pdftex.def Info: figures/example_sampling_x1_grid.pdf  used on input line 232.
+(pdftex.def)             Requested size: 187.21962pt x 137.51202pt.
+<figures/example_sampling_x2_grid.pdf, id=111, 544.43402pt x 399.894pt>
+File: figures/example_sampling_x2_grid.pdf Graphic file (type pdf)
+<use figures/example_sampling_x2_grid.pdf>
+Package pdftex.def Info: figures/example_sampling_x2_grid.pdf  used on input line 238.
+(pdftex.def)             Requested size: 187.21962pt x 137.51202pt.
+ [3 </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_x1_grid.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_x2_grid.pdf
+
+pdfTeX warning: pdflatex (file /home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_x2_grid.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<figures/example_boxes_1.pdf, id=158, 602.25pt x 401.5pt>
+File: figures/example_boxes_1.pdf Graphic file (type pdf)
+<use figures/example_boxes_1.pdf>
+Package pdftex.def Info: figures/example_boxes_1.pdf  used on input line 276.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<figures/example_boxes_2.pdf, id=159, 602.25pt x 401.5pt>
+File: figures/example_boxes_2.pdf Graphic file (type pdf)
+<use figures/example_boxes_2.pdf>
+Package pdftex.def Info: figures/example_boxes_2.pdf  used on input line 282.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+ [4 </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_sampling_x1_grid.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_sampling_x2_grid.pdf
+
+pdfTeX warning: pdflatex (file /home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_sampling_x2_grid.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_boxes_1.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_boxes_2.pdf>]
+<figures/example_pinching_1.pdf, id=203, 602.25pt x 401.5pt>
+File: figures/example_pinching_1.pdf Graphic file (type pdf)
+<use figures/example_pinching_1.pdf>
+Package pdftex.def Info: figures/example_pinching_1.pdf  used on input line 308.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<figures/example_pinching_2.pdf, id=204, 602.25pt x 401.5pt>
+File: figures/example_pinching_2.pdf Graphic file (type pdf)
+<use figures/example_pinching_2.pdf>
+Package pdftex.def Info: figures/example_pinching_2.pdf  used on input line 313.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<figures/ishigami_1.pdf, id=207, 602.25pt x 401.5pt>
+File: figures/ishigami_1.pdf Graphic file (type pdf)
+<use figures/ishigami_1.pdf>
+Package pdftex.def Info: figures/ishigami_1.pdf  used on input line 352.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<figures/ishigami_2.pdf, id=208, 602.25pt x 401.5pt>
+File: figures/ishigami_2.pdf Graphic file (type pdf)
+<use figures/ishigami_2.pdf>
+Package pdftex.def Info: figures/ishigami_2.pdf  used on input line 358.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<figures/ishigami_3.pdf, id=209, 602.25pt x 401.5pt>
+File: figures/ishigami_3.pdf Graphic file (type pdf)
+<use figures/ishigami_3.pdf>
+Package pdftex.def Info: figures/ishigami_3.pdf  used on input line 364.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<applications/ishigami_pinching_1.pdf, id=210, 602.25pt x 401.5pt>
+File: applications/ishigami_pinching_1.pdf Graphic file (type pdf)
+<use applications/ishigami_pinching_1.pdf>
+Package pdftex.def Info: applications/ishigami_pinching_1.pdf  used on input line 383.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<applications/ishigami_pinching_2.pdf, id=211, 602.25pt x 401.5pt>
+File: applications/ishigami_pinching_2.pdf Graphic file (type pdf)
+<use applications/ishigami_pinching_2.pdf>
+Package pdftex.def Info: applications/ishigami_pinching_2.pdf  used on input line 389.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+<applications/ishigami_pinching_3.pdf, id=212, 602.25pt x 401.5pt>
+File: applications/ishigami_pinching_3.pdf Graphic file (type pdf)
+<use applications/ishigami_pinching_3.pdf>
+Package pdftex.def Info: applications/ishigami_pinching_3.pdf  used on input line 395.
+(pdftex.def)             Requested size: 187.21962pt x 124.81291pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_pinching_1.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/figures/example_pinching_2.pdf>] [6] [7 </home/enmidol/Documents/interval-sensitivity/second-draft/figures/ishigami_1.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/figures/ishigami_2.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/figures/ishigami_3.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/applications/ishigami_pinching_1.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/applications/ishigami_pinching_2.pdf> </home/enmidol/Documents/interval-sensitivity/second-draft/applications/ishigami_pinching_3.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 496.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 506.
+ (/home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.bbl)
+\Changes@OutFile=\write5
+\openout5 = `esrel2022-paper.soc'.
+
+\tf@loc=\write6
+\openout6 = `esrel2022-paper.loc'.
+
+ [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 514.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 514.
+ (/home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 514.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 514.
+Package rerunfilecheck Info: File `esrel2022-paper.out' has not changed.
+(rerunfilecheck)             Checksum: A0E5E87BB1E831C318E73DF456094276;305.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 18148 strings out of 492639
+ 338883 string characters out of 6129286
+ 425191 words of memory out of 5000000
+ 21620 multiletter control sequences out of 15000+600000
+ 22557 words of font info for 50 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 69i,15n,82p,551b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /home/enmidol/Documents/interval-sensitivity/second-draft/esrel2022-paper.pdf (8 pages, 430019 bytes).
+PDF statistics:
+ 315 PDF objects out of 1000 (max. 8388607)
+ 253 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+
